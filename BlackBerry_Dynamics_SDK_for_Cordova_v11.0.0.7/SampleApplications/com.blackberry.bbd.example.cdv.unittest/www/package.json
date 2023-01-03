@@ -1,0 +1,14 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.unittest.www",
+  "description": "BlackBerry Dynamics UnitTest sample application UI",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.unittest.www",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE IN ROOT FOLDER",
+  "dependencies": {
+    "async": "^2.6.1",
+    "jasmine": "^3.3.0",
+    "jquery": "^3.3.1"
+  }
+}

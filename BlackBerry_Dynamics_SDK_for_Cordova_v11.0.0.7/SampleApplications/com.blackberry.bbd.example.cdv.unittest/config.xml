@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.blackberry.bbd.example.cdv.unittest" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>UnitTest</name>
+    <description>
+        Demonstrates how to use all APIs supported in this version of the Cordova Plugin release.
+    </description>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="file:*" />
+    <platform name="android">
+        <content src="index-android.html" />
+        <allow-intent href="market:*" />
+        <icon src="res/android/resources/drawable-ldpi/com_bbd_default_logo.png" density="ldpi" />
+        <icon src="res/android/resources/drawable-mdpi/com_bbd_default_logo.png" density="mdpi" />
+        <icon src="res/android/resources/drawable-hdpi/com_bbd_default_logo.png" density="hdpi" />
+        <icon src="res/android/resources/drawable-xhdpi/com_bbd_default_logo.png" density="xhdpi" />
+        <hook src="hooks/after_android_platform_add.js" type="after_platform_add" />
+    </platform>
+    <platform name="ios">
+        <content src="index-ios.html" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <resource-file src="res/ios/LaunchScreen.storyboard" />
+        <resource-file src="res/ios/Images.xcassets" />
+        <config-file parent="UILaunchStoryboardName" target="*-Info.plist">
+            <string>LaunchScreen</string>
+        </config-file>
+        <hook type="after_platform_add" src="hooks/after_ios_platform_add.js" />
+    </platform>
+    <hook type="before_platform_add" src="hooks/before_platform_add.js" />
+    <hook src="hooks/setup_test_env.js" type="after_platform_add" />
+</widget>

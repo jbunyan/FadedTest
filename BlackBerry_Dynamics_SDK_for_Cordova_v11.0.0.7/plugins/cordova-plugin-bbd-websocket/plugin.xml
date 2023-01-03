@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-websocket"
+        version="1.0.0">
+
+  <name>WebSocket Plugin</name>
+
+  <description>The WebSocket plugin implements the secure WebSocket APIs.</description>
+
+  <keywords>cordova,plugin,websocket,gd</keywords>
+
+  <license>(c) 2021 BlackBerry Limited. All rights reserved.</license>
+
+  <info>
+    The WebSocket plugin is dependent on the Base plugin, so please make sure the Base plugin is installed correctly.
+  </info>
+
+  <dependency id="cordova-plugin-bbd-base" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-base" version="^4.0.0" />
+
+  <engines>
+    <engine name="cordova-android" version=">=9.0.0"/>
+    <engine name="cordova-ios" version=">=6.0.0"/>
+  </engines>
+
+  <!-- Android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="WebSocket" >
+          <param name="android-package" value="com.good.gd.cordova.plugins.WebSocketPlugin"/>
+          <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/WebSocket.js" name="WebSocket">
+      <clobbers target="window.WebSocket" />
+    </js-module>
+
+    <lib-file src="src/android/libs/bbd-websocket.jar" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="WebSocket">
+        <param name="ios-package" value="WebSocketPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/WebSocket.js" name="WebSocket">
+      <clobbers target="window.WebSocket" />
+    </js-module>
+
+    <framework src="src/ios/frameworks/BbdWebSocketPlugin.framework" custom="true" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+  </platform>
+
+</plugin>

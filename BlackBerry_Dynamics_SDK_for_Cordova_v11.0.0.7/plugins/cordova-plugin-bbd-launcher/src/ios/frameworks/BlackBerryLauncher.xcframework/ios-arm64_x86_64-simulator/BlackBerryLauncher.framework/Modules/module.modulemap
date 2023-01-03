@@ -1,0 +1,6 @@
+framework module BlackBerryLauncher {
+  umbrella header "BlackBerryLauncher.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,51 @@
+
+/* Class = "IBUIButton"; accessibilityLabel = "Launcher"; ObjectID = "EEH-JO-pRr"; */
+"EEH-JO-pRr.accessibilityLabel" = "Launcher";
+
+/* Class = "IBUIView"; accessibilityLabel = "Dismiss"; ObjectID = "RZm-uQ-y7E"; */
+"RZm-uQ-y7E.accessibilityLabel" = "禁用";
+
+/* Class = "IBUIImageView"; accessibilityLabel = "Presence"; ObjectID = "aid-Q7-4mw"; */
+"aid-Q7-4mw.accessibilityLabel" = "启用";
+
+/* Class = "IBUILabel"; text = "Create New"; ObjectID = "vAJ-IS-o1d"; */
+"vAJ-IS-o1d.text" = "新建";
+
+/* Class = "IBUILabel"; text = "This is your Launcher."; ObjectID = "HvI-LP-yko"; */
+"HvI-LP-yko.text" = "这是您的 Launcher。";
+
+/* Class = "IBUILabel"; text = "Tap it to navigate"; ObjectID = "iwh-Vx-0Xy"; */
+"iwh-Vx-0Xy.text" = "点按以开始导航";
+
+/* Class = "IBUILabel"; text = "and drag it where you like."; ObjectID = "A18-Sf-HLW"; */
+"A18-Sf-HLW.text" = "拖曳至您喜欢的位置。";
+
+/* Class = "IBUILabel"; text = "Applications"; ObjectID = "6HS-JE-l7h"; */
+"6HS-JE-l7h.text" = "应用";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "7gn-dg-xiv"; */
+"7gn-dg-xiv.normalTitle" = "设置";
+
+/* Class = "IBUINavigationItem"; title = "Launcher Opacity"; ObjectID = "ooj-JZ-Eia"; */
+"ooj-JZ-Eia.title" = "Launcher 透明度";
+
+/* Class = "IBUISlider"; accessibilityLabel = "Launcher Opacity"; ObjectID = "0aH-do-qCN"; */
+"0aH-do-qCN.accessibilityLabel" = "Launcher 透明度";
+
+/* Class = "IBUILabel"; text = "Launcher Icon will be more or less opaque, based on your preference."; ObjectID = "MKM-Wh-rps"; */
+"MKM-Wh-rps.text" = "根据您的喜好，Launcher 图标将或多或少不透明。";
+
+/* Class = "IBUILabel"; text = "Low"; ObjectID = "83z-8a-Tjj"; */
+"83z-8a-Tjj.text" = "低";
+
+/* Class = "IBUILabel"; text = "Medium"; ObjectID = "pJL-tJ-LcZ"; */
+"pJL-tJ-LcZ.text" = "适中";
+
+/* Class = "IBUILabel"; text = "High"; ObjectID = "SW5-pc-37T"; */
+"SW5-pc-37T.text" = "高";
+
+/* Class = "UILabel"; text = "Move your favorites apps here"; ObjectID = "WOX-bt-89h"; */
+"WOX-bt-89h.text" = "将您喜爱的应用移到此处";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "26H-qK-XoH"; */
+"26H-qK-XoH.normalTitle" = "完成";

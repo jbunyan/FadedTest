@@ -1,0 +1,51 @@
+
+/* Class = "IBUIButton"; accessibilityLabel = "Launcher"; ObjectID = "EEH-JO-pRr"; */
+"EEH-JO-pRr.accessibilityLabel" = "Launcher";
+
+/* Class = "IBUIView"; accessibilityLabel = "Dismiss"; ObjectID = "RZm-uQ-y7E"; */
+"RZm-uQ-y7E.accessibilityLabel" = "Abandonner";
+
+/* Class = "IBUIImageView"; accessibilityLabel = "Presence"; ObjectID = "aid-Q7-4mw"; */
+"aid-Q7-4mw.accessibilityLabel" = "Présence";
+
+/* Class = "IBUILabel"; text = "Create New"; ObjectID = "vAJ-IS-o1d"; */
+"vAJ-IS-o1d.text" = "Créer nouveau";
+
+/* Class = "IBUILabel"; text = "This is your Launcher."; ObjectID = "HvI-LP-yko"; */
+"HvI-LP-yko.text" = "Voici votre Launcher.";
+
+/* Class = "IBUILabel"; text = "Tap it to navigate"; ObjectID = "iwh-Vx-0Xy"; */
+"iwh-Vx-0Xy.text" = "Appuyez dessus pour naviguer";
+
+/* Class = "IBUILabel"; text = "and drag it where you like."; ObjectID = "A18-Sf-HLW"; */
+"A18-Sf-HLW.text" = "et faites-le défiler où vous voulez.";
+
+/* Class = "IBUILabel"; text = "Applications"; ObjectID = "6HS-JE-l7h"; */
+"6HS-JE-l7h.text" = "Applications";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "7gn-dg-xiv"; */
+"7gn-dg-xiv.normalTitle" = "Paramètres";
+
+/* Class = "IBUINavigationItem"; title = "Launcher Opacity"; ObjectID = "ooj-JZ-Eia"; */
+"ooj-JZ-Eia.title" = "Opacité de l’îcone “Launcher”";
+
+/* Class = "IBUISlider"; accessibilityLabel = "Launcher Opacity"; ObjectID = "0aH-do-qCN"; */
+"0aH-do-qCN.accessibilityLabel" = "Opacité de l’îcone “Launcher";
+
+/* Class = "IBUILabel"; text = "Launcher Icon will be more or less opaque, based on your preference."; ObjectID = "MKM-Wh-rps"; */
+"MKM-Wh-rps.text" = "L'icône Launcher sera plus ou moins opaque, selon vos préférences.";
+
+/* Class = "IBUILabel"; text = "Low"; ObjectID = "83z-8a-Tjj"; */
+"83z-8a-Tjj.text" = "Faible";
+
+/* Class = "IBUILabel"; text = "Medium"; ObjectID = "pJL-tJ-LcZ"; */
+"pJL-tJ-LcZ.text" = "Moyenne";
+
+/* Class = "IBUILabel"; text = "High"; ObjectID = "SW5-pc-37T"; */
+"SW5-pc-37T.text" = "Élevé";
+
+/* Class = "UILabel"; text = "Move your favorites apps here"; ObjectID = "WOX-bt-89h"; */
+"WOX-bt-89h.text" = "Déplacez vos applications préférées ici";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "26H-qK-XoH"; */
+"26H-qK-XoH.normalTitle" = "Terminé";

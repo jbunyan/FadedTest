@@ -1,0 +1,29 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.sqlite",
+  "displayName": "SQLite",
+  "version": "2.0.0",
+  "description": "Sample demonstrates how to use secure storage APIs supported in this version of the Cordova SDK release.",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.sqlite",
+    "version": "2.0.0",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "install": "cd www && npm install"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.0",
+    "cordova-plugin-bbd-base": "file:../../plugins/cordova-plugin-bbd-base",
+    "cordova-plugin-bbd-sqlite-storage": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#sqlite-storage",
+    "cordova-plugin-bbd-file": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#file"
+  },
+  "devDependencies": {},
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-bbd-base": {},
+      "cordova-plugin-bbd-sqlite-storage": {},
+      "cordova-plugin-bbd-file": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.blank",
+  "displayName": "Blank",
+  "version": "2.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.blank",
+    "version": "2.0.0",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "shelljs": "^0.7.0",
+    "cordova-plugin-bbd-base": "file:../../plugins/cordova-plugin-bbd-base"
+  },
+  "devDependencies": {},
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-bbd-base": {}
+    }
+  }
+}

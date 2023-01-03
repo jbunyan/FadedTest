@@ -1,0 +1,174 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.about-page #back-btn {
+    display: none;
+}
+
+#back-btn {
+    float: left;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-left: 16px;
+}
+
+/* Main content */
+
+article {
+    bottom: 80px;
+    padding: 10px 16px !important;
+    padding-bottom: 80px !important;
+}
+
+article p {
+    color: #4d5b67;
+}
+
+body .fields-custom .ui-block-a {
+    width: 75%;
+    float: left;
+    padding-top: 3px;
+}
+
+
+body .fields-custom .ui-block-b {
+    float: right;
+    width: 25%;
+}
+
+.ui-input-text {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #dedede;
+}
+
+.fields-custom .action-button,
+.ui-block-button .action-button {
+    box-shadow: none;
+    background-color: #fff;
+    color: #35a7dc;
+    border: 1px solid #35a7dc;
+    font-weight: normal;
+    width: 50%;
+}
+
+.fields-custom button {
+    width: 80% !important;
+    margin: 10px auto !important;
+}
+
+.ui-block-button .action-button {
+    margin: 0 auto !important;
+}
+
+.ui-checkbox label,
+.ui-radio label {
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal;
+    background-image: linear-gradient(#fff, #fff);
+    text-shadow: none !important;
+}
+
+.radio-buttons {
+    margin: 25px 0;
+}
+
+.ui-select .ui-btn {
+    box-shadow: none;
+    background-image:linear-gradient(#fff, #fff);
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal;
+    text-shadow: none !important;
+}
+
+.ui-select .ui-btn.ui-focus {
+    box-shadow: none;
+    text-shadow: none;
+    background-image: linear-gradient(#2a86b0, #2a86b0);
+    color: #fff !important;
+    border: 1px solid #2a86b0 !important;
+    font-weight: normal;
+}
+
+.ui-focus {
+    box-shadow: none !important;
+}
+
+.static-footer {
+    width: 100%;
+    z-index: 2;
+    height: 80px;
+    height: calc(constant(safe-area-inset-bottom) + 80px);
+    height: calc(env(safe-area-inset-bottom) + 80px);
+    position: fixed;
+    bottom: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    height: calc(constant(safe-area-inset-bottom) + 80px);
+    height: calc(env(safe-area-inset-bottom) + 80px);
+    color: #fff;
+    text-align: center;
+    background-color: #35a7dc;
+}
+
+footer table {
+    text-shadow: none;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td {
+    width: 50%;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    text-shadow: none;
+}
+
+td:active {
+    background-color: #2a86b0;
+    color: #fff !important;
+}
+
+.response-detail {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+}
+
+.response-detail h1 {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    border-bottom: 2px solid #35a7dc;
+    color: #838d96;
+}
+
+.response-detail h4 {
+    color: #082c44;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.response-detail .response-header {
+    color: #838d96;
+}

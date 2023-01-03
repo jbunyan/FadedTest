@@ -1,0 +1,63 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+.about {
+    height: 200px;
+    background-color: #fff;
+    border-bottom: 2px solid #127cc3;
+    text-align: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    color: #838d96;
+}
+
+.about #info {
+    width: 40px;
+    height: 40px;
+}
+
+article {
+    top: 255px;
+    top: calc(constant(safe-area-inset-top) + 255px);
+    top: calc(env(safe-area-inset-top) + 255px);
+    background-color: #f6f6f6;
+}
+
+.timer,
+.service-info {
+    padding-left: 16px;
+    border-bottom: 1px solid #dedede;
+}
+
+#timer-title,
+#services-title {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    border-bottom: 2px solid #35a7dc;
+    color: #838d96;
+}
+
+.timer h1,
+.service-info h1 {
+    color: #082c44;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.timer p,
+.service-info p {
+    color: #838d96;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+}
+
+.timer #policy-version,
+.service-info #available-services {
+    border: 0;
+}
+
+.separator {
+    border-bottom: 2px solid #35a7dc !important;
+}

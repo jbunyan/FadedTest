@@ -1,0 +1,97 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+fieldset.ui-controlgroup {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.files-title {
+    text-align: center;
+    padding-top: 20px;
+    color: #4d5b67;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#files-wrapper fieldset {
+    border: 1px solid #35a7dc;
+}
+
+#files-wrapper label {
+    border: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #35a7dc;
+}
+
+#files-wrapper .ui-last-child {
+    border-bottom: 0;
+}
+
+#files-wrapper .file-name {
+    color: #4d5b67
+}
+
+#files-wrapper span {
+    color: #838d96;
+    font-weight: normal;
+}
+
+.reader-wrapper {
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid #35a7dc;
+}
+
+#file-readers .reader-title {
+    padding: 5px;
+    background-color: #35a7dc;
+    color: #fff;
+}
+
+#file-readers .reader-body {
+    font-size: 14px;
+    padding: 15px 5px;
+    color: #838d96;
+}
+
+#file-readers .reader-footer {
+    padding: 5px;
+    background-color: #35a7dc;
+    font-style: italic;
+    font-size: 10px;
+    color: #fff;
+}
+
+#select-app,
+#select-method {
+    padding-left: 16px;
+}
+
+#select-wrapper h3 {
+    padding: 10px 0 10px 16px;
+    color: #082c44;
+    font-weight: bold;
+}
+
+#select-wrapper input {
+    float: left;
+    margin-right: 5px;
+}
+
+#select-app label,
+#select-method label {
+    margin: 0;
+    color: #838d96;
+}
+
+#no-app-error {
+    width: 90%;
+    text-align: center;
+    border: 1px solid #35a7dc;
+    margin: 20px auto;
+    border-style: solid;
+    color: #4d5b67;
+    padding: 20px 0;
+}

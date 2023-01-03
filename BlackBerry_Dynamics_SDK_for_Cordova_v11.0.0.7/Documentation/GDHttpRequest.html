@@ -1,0 +1,3057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: GDHttpRequest</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: GDHttpRequest</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>GDHttpRequest<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Implements the secure HTTP communications APIs.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="GDHttpRequest"><span class="type-signature"></span>new GDHttpRequest<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Case-sensitive string containing the HTTP method, which
+will be sent to the server. Typical values are: "GET", "POST", "HEAD",
+"OPTIONS", "TRACE", "PUT", "CONNECT". Any other value is sent as a custom
+method.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Uniform Resource Locator (URL) that will be requested. The
+URL must be fully qualified, including a scheme, domain, and path. For
+example: "http://www.example.com/index.html".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Length of time out in seconds, or 0 (zero) for never.
+A negative timeout number will allow this request to use the default timeout
+value (30 seconds).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isAsync</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Set this value to true to make asynchronous calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Authentication username. For Kerberos, this is in the
+user@realm format.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Authentication password.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>auth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The authentication scheme.  Valid values are:
+<ul><li>"NTLM" to use NTLM authentication</li>
+<li>"DIGEST" to use Digest Access authentication</li>
+<li>"NEGOTIATE" to use negotiated Kerberos authentication</li>
+<li>"BASIC" or a null pointer to use Basic Access authentication.</li></ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isIncremental</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Determine if the response from an asynchronous HTTP request
+should be processed incrementally (as soon as data is received), or if the entire
+request should be returned within a single response.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disableHostVerification</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Disable host name verification, when
+making an HTTPS request. Host name verification is an SSL/TLS security option.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disableFollowLocation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Disable automatic following of redirections.
+When automatic following is disabled, the application must handle redirection
+itself, including handling Location: headers, and HTTP statuses in the 30x range.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disablePeerVerification</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Disable certificate authenticity
+verification, when making an HTTPS request. Authenticity verification is an
+SSL/TLS security option.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>disableCookieHandling</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Disable automatic cookie handling. When
+automatic handling is disabled, the application must store and process cookies
+itself.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cookieState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Stores a value that determines whether or not cookies
+should be cleared prior to sending the request.  This value should not be set
+directly.  Instead, call the clearCookies method.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>host</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The address of the proxy. Can be either an Internet Protocol
+address (IP address, for example "192.168.1.10"), or a fully qualified domain name
+(for example "www.example.com").</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Number of the port on the proxy to which connection will be made.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxyUser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication username.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxyPassword</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication password.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proxyAuth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication scheme.  Valid values are:
+<ul>
+ <li>"NTLM" to use NTLM authentication</li>
+ <li>"DIGEST" to use Digest Access authentication</li>
+ <li>"BASIC" or a null pointer to use Basic Access authentication.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path (optional) and filename of the file to upload if this
+is a file upload request. If path is omitted, the file is read from the current working directory.
+NOTE: There is no need to set this property directly since it will be set during the sendFile
+function call (see <a href="#sendFile">sendFile</a>).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sendOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This object contains any optional parameters that
+are sent with the HTTP request.  This value should not be set directly.  Instead,
+call the desired optional methods to set the request parameters (e.g.
+addPostParameter, addRequestHeader, addHttpBody).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addHttpBody"><span class="type-signature"></span>addHttpBody<span class="signature">(body)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to add an httpBody to a post request, the body will take
+the place of any post parameters
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the http body to be sent</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line649">line 649</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addPostParameter"><span class="type-signature"></span>addPostParameter<span class="signature">(key, value)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to add a name/value pair to the HTTP request.
+The request method must be "POST". Multiple name/value pairs can be added, by
+calling this function multiple times.  When the request is sent, name/value pairs
+will be encoded in the request body in a way that is compatible with HTML form
+submission. No other body data can be passed in the send call.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name associated with the value.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The value to be set.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line612">line 612</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addRequestHeader"><span class="type-signature"></span>addRequestHeader<span class="signature">(key, value)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to add a Header Field to the HTTP request. This
+is for standard HTTP Header Fields such as "Authorization".  This function can
+be called zero or more times, since not all HTTP requests will require headers to
+be added by the application.  If a header key is added multiple times, only the
+last stored value will be maintained (e.g. duplicate keys are not allowed).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The HTTP Header Field to be added.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The header field's value.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line581">line 581</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearCookies"><span class="type-signature"></span>clearCookies<span class="signature">(includePersistentStore)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Clear cookies that were automatically stored. Cookies can be cleared from
+memory only, or from the persistent cookie store too. If cleared from memory only,
+cookies will still be reloaded from the persistent cookie store when the application
+is next launched.  This function is most useful when automatic cookie handling is
+enabled (i.e. GDHttpRequest.disableCookieHandling = false).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>includePersistentStore</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">When this value is set to true, then all
+cookies are cleared from memory and the persistent cookie storage file.  When
+this value is false, then all cookies are cleared from memory only.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line504">line 504</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearHttpBody"><span class="type-signature"></span>clearHttpBody<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to clear the httpBody of a request
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line661">line 661</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearPostParameters"><span class="type-signature"></span>clearPostParameters<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to remove all name/value post variables from the HTTP
+request. Name/value pairs would have been added with the addPostParameter function.
+This function need only be called if it is required to clear name/value pairs before
+sending.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line637">line 637</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearRequestHeaders"><span class="type-signature"></span>clearRequestHeaders<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to remove all name/value request headers that
+were added through a call to addRequestHeader.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line602">line 602</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createRequest"><span class="type-signature"></span>createRequest<span class="signature">(method, url, timeout, isAsync, user, password, auth, isIncremental)</span><span class="type-signature"> &rarr; {<a href="GDHttpRequest.html">GDHttpRequest</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to create the HTTP request, and set the main parameters.
+NOTE: This function only initializes the HTTP parameters; it does not initiate
+data transfer (see send).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Case-sensitive string containing the HTTP method, which
+will be sent to the server. Typical values are: "GET", "POST", "HEAD",
+"OPTIONS", "TRACE", "PUT", "CONNECT". Any other value is sent as a custom
+method.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Uniform Resource Locator (URL) that will be requested. The
+URL must be fully qualified, including a scheme, domain, and path. For
+example: "http://www.example.com/index.html".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Length of time out in seconds, or 0 (zero) for never.
+A negative timeout number will allow this request to use the default timeout
+value (30 seconds).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isAsync</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Set this value to true to make asynchronous calls.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Authentication username. For Kerberos, this is in the
+user@realm format.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Authentication password.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>auth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The authentication scheme.  Valid values are:
+<ul>
+ <li>"NTLM" to use NTLM authentication</li>
+ <li>"DIGEST" to use Digest Access authentication</li>
+ <li>"NEGOTIATE" to use negotiated Kerberos authentication</li>
+ <li>"BASIC" or a null pointer to use Basic Access authentication.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isIncremental</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Determine if the response from an aysnchronous HTTP request
+should be processed incrementally (as soon as data is received), or if the entire
+request should be returned within a single response.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line443">line 443</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The newly created request object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="GDHttpRequest.html">GDHttpRequest</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="disableHttpProxy"><span class="type-signature"></span>disableHttpProxy<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to disable connection through an HTTP proxy.
+This function should be called before <a href="#send">GDHttpRequest.send</a>
+or <a href="#sendFile">GDHttpRequest.sendFile</a> has been called.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line566">line 566</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableClientCertAuth"><span class="type-signature"></span>enableClientCertAuth<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    iOS Only! This method enables certificate-based authentication for XMLHttpRequest.
+It has to be called at first place when 'ondeviceready' event occures to connect to WebView.
+In case of HTTPS your SSL/TLS self-signed certificate from your server endpoint
+should be trusted on your device.
+Please note that this call should be done only once per WKWebView.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line897">line 897</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>window.plugins.GDHttpRequest.enableClientCertAuth();
+
+var url = 'https://your/server/endpoint'; // here should be your server endpiont that requires certificate-based auth
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+
+        if (xhr.status === 200) {
+            alert(xhr.responseText)
+        } else {
+            alert("Error", xhr)
+        }
+    }
+};
+
+xhr.send();</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableClientCertAuthOnUIWebView"><span class="type-signature"></span>enableClientCertAuthOnUIWebView<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    iOS Only! This method enables certificate-based authentication for XMLHttpRequest.
+It has to be called at first place when 'ondeviceready' event occures to connect to WebView.
+In case of HTTPS your SSL/TLS self-signed cervificate from your server endpoint
+should be trusted on your device.
+Please note that this call should be done only once per WKWebView.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>It will be removed in future versions.
+Use window.plugins.GDHttpRequest.enableClientCertAuth(); instead.</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line861">line 861</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>window.plugins.GDHttpRequest.enableClientCertAuthOnUIWebView();
+
+var url = 'https://your/server/endpoint'; // here should be your server endpiont that requires certificate-based auth
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+
+        if (xhr.status === 200) {
+            alert(xhr.responseText)
+        } else {
+            alert("Error", xhr)
+        }
+    }
+};
+
+xhr.send();</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableHttpProxy"><span class="type-signature"></span>enableHttpProxy<span class="signature">(host, port, user, password, auth)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to configure an HTTP proxy address and credentials,
+and enable connection through the proxy.  The proxy server can be located behind the
+enterprise firewall. In this case its address must be registered in the enterprise's
+Good Control (GC) console. Registration would usually be as a enterprise management console additional server.
+<a href="https://begood.good.com/community/gdn">See the Good Control overview for
+application developers</a>.  Certificate authenticity verification while using a proxy
+is not currently supported. When making HTTPS requests through a proxy, SSL/TLS
+certificate verification must be disabled, see the disablePeerVerification function.
+This function should be called before <a href="#send">GDHttpRequest.send</a> or
+<a href="#sendFile">GDHttpRequest.sendFile</a> has been called.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>host</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The address of the proxy. Can be either an Internet Protocol
+address (IP address, for example "192.168.1.10"), or a fully qualified domain name
+(for example "www.example.com").</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Number of the port on the proxy to which connection will be made.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication username.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication password.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>auth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The proxy authentication scheme.  Valid values are:
+<ul>
+ <li>"NTLM" to use NTLM authentication</li>
+ <li>"DIGEST" to use Digest Access authentication</li>
+ <li>"BASIC" or a null pointer to use Basic Access authentication.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line525">line 525</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseHttpResponse"><span class="type-signature"></span>parseHttpResponse<span class="signature">(responseText)</span><span class="type-signature"> &rarr; {<a href="GDHttpResponse.html">GDHttpResponse</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to transform the HTTP response text into a
+GDHttpResponse object.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>responseText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A string representing the HTTP response text.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line671">line 671</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The HTTP response object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="GDHttpResponse.html">GDHttpResponse</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="send"><span class="type-signature"></span>send<span class="signature">(success, fail)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Send the HTTP request with it's associated parameters.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke upon successful completion of the request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke if the request cannot be completed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line685">line 685</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var data_json_url = "http://servername.dev.company.com:8082/data.json";
+var poster_url = "http://servername.dev.company.com:8082/httpposter/load";
+var MaxTestDuration = 10 * 1000; // In milliseconds.
+var gTestTimeoutID = null;
+var aRequest;
+
+function myHTTPRequest(){
+var method = "POST";
+var url = data_json_url;
+var timeout = 30;
+var isAsync = false;
+var user = null;
+var password = null;
+var auth = null;
+var isIncremental = true;
+var requestBody = {key: "value"};
+
+//-- createRequest
+aRequest = window.plugins.GDHttpRequest.createRequest(method, url, timeout, isAsync, user, password, auth, isIncremental);
+
+//-- clearCookies in memory
+aRequest.clearCookies(false);
+
+//-- clearCookies in memory and the persistent cookie storage file
+aRequest.clearCookies(true);
+
+//-- enableHttpProxy &amp; disableHttpProxy
+var host = "some_host.com", port = 8080;
+user = "some_user";
+password = "some_pwd";
+aRequest.enableHttpProxy(host, port, user, password, auth);
+aRequest.disableHttpProxy();
+
+//-- addRequestHeader
+var headerName = "customHeader", headerValue = "customValue";
+aRequest.addRequestHeader(headerName, headerValue);
+
+//-- addHttpBody &amp; clearHttpBody
+aRequest.addHttpBody(JSON.stringify(requestBody));
+aRequest.clearHttpBody();
+
+//-- addPostParameter &amp; clearPostParameters
+var postName = "someName", postValue = "some value";
+aRequest.addPostParameter(postName, postValue);
+aRequest.clearPostParameters();
+
+//-- send
+function sendSuccess(response) {
+ console.log("Received valid response from the send request");
+ try {
+     //-- parseHttpResponse
+     var responseObj = window.plugins.GDHttpRequest.parseHttpResponse(response);
+     console.log(responseObj.responseText);
+ } catch(e) {
+     console.log("Invalid response object returned from call to send.");
+ }
+ };
+
+function sendFail() {
+ console.log("The send request resulted in an error.");
+}
+
+aRequest.send(sendSuccess,sendFail);
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendFile"><span class="type-signature"></span>sendFile<span class="signature">(fileName, success, fail)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to upload a file using the HTTP request object.  NOTE: this method does not
+support asynchronous operations.  The HTTP request's method can be "PUT" or a custom method. This function
+causes the HTTP request to be sent, similarly to the send function, above. The body of the request will be
+the contents of the specified file.  The file will not be deleted after it is uploaded. Uploading directly
+from the BlackBerry Dynamics secure file system is supported.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path (optional) and filename of the file to upload. If path is omitted, the file
+is read from the application documents directory.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke upon successful completion of the request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke if the request cannot be completed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDHttpRequest.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDHttpRequest.js.html#line761">line 761</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GDAppKinetics.html">GDAppKinetics</a></li><li><a href="GDApplication.html">GDApplication</a></li><li><a href="GDCacheController.html">GDCacheController</a></li><li><a href="GDFormData.html">GDFormData</a></li><li><a href="GDHttpRequest.html">GDHttpRequest</a></li><li><a href="GDHttpResponse.html">GDHttpResponse</a></li><li><a href="GDInterAppCommunication.html">GDInterAppCommunication</a></li><li><a href="GDPushChannel.html">GDPushChannel</a></li><li><a href="GDPushChannelResponse.html">GDPushChannelResponse</a></li><li><a href="GDSecureStorage.html">GDSecureStorage</a></li><li><a href="GDServerSideServices.html">GDServerSideServices</a></li><li><a href="GDSocket.html">GDSocket</a></li><li><a href="GDSocketResponse.html">GDSocketResponse</a></li><li><a href="GDSpecificPolicies.html">GDSpecificPolicies</a></li><li><a href="GDTokenHelper.html">GDTokenHelper</a></li><li><a href="Launcher.html">Launcher</a></li><li><a href="WebSocket.html">WebSocket</a></li><li><a href="XMLHttpRequest.html">XMLHttpRequest</a></li></ul>
+<h3>Other</h3><ul><li><a href=LICENCES.html>LICENCES</a></li></ul></nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 19 2022 06:05:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

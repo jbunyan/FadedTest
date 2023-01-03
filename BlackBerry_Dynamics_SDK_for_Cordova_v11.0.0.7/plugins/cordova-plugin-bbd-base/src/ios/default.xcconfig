@@ -1,0 +1,12 @@
+//
+//  default.xcconfig
+//
+//  (c) 2021 BlackBerry Limited. All rights reserved.
+//
+
+
+// Build configuration for BlackBerry Dynamics SDK for iOS. Please do not remove it!!!
+ENTITLEMENTS_REQUIRED=YES
+CODE_SIGN_ENTITLEMENTS[sdk=iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Resources/Entitlements.plist
+LIBRARY_SEARCH_PATHS="$(SDK_DIR)/usr/lib/swift" "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)" "$(inherited)"
+SWIFT_VERSION=5.0

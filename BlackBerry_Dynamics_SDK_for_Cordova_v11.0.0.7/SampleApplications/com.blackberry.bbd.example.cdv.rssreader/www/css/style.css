@@ -1,0 +1,173 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+header {
+    min-height: 25px;
+}
+
+article {
+    top: 55px;
+    top: calc(constant(safe-area-inset-top) + 55px);
+    top: calc(env(safe-area-inset-top) + 55px);
+}
+
+#container-add .ui-input-text {
+    margin: 0 auto;
+    display: block;
+}
+
+#container-details .ui-block-b {
+    text-align: center;
+    font-size: 8px;
+}
+
+#container-details .ui-block-c {
+    text-align: right;
+}
+
+#container-details #feeds a {
+    font-weight: 300;
+    white-space: normal;
+}
+
+.d-none {
+    display: none;
+}
+
+.ui-page.ui-page-theme-a.ui-page-active {
+    padding: 0 !important;
+    background-image:linear-gradient(#fff, #fff);
+}
+
+#application-title, 
+#add-feed-title,
+#feed-title {
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+#application-title, 
+#add-feed-title {
+    width: calc(100% - 88px);
+}
+
+#feed-title {
+    width: calc(100% - 132px);
+    white-space: nowrap;
+    overflow: auto;
+}
+
+#add-feed,
+#feeds-list {
+    float: left;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-left: 16px;
+}
+
+#edit-element,
+#add-rss-feed,
+#refresh-element,
+#delete-element {
+    float: right;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-right: 16px;
+}
+
+#list-container-list {
+    box-shadow: none;
+    background-color: #f6f6f6;
+    border-radius: 0;
+    border-top: 2px solid #127cc3;
+}
+
+#list-container-list li {
+    border: 0 !important;
+    border-bottom: 1px solid #dedede !important;
+    text-shadow: none;
+    background-image:linear-gradient(#f6f6f6, #f6f6f6);
+}
+
+#list-container-list a {
+    font-weight: normal;
+    color: #838d96;
+}
+
+#list-container-list .name {
+    font-weight: bold;
+    color: #4d5b67;
+}
+
+.content-details {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 16px !important;
+    border-top: 1px solid #dedede;
+    box-sizing: border-box;
+}
+
+.content-details li {
+    box-shadow: none;
+}
+
+.content-details a {
+    border: 0 !important;
+    background-color: #fff !important;
+}
+
+#feeds {
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+#feeds h3,
+#feeds p {
+    color: #082c44;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px;
+}
+
+#feeds a {
+    color: #838d96;
+    border-bottom: 1px solid #dedede !important;
+    padding-bottom: 10px;
+    padding-left: 0;
+    box-shadow: none;
+}
+
+#feeds li {
+    border: 0;
+    background-image:linear-gradient(#fff, #fff);
+}
+
+.content-add {
+    padding: 0 20px !important;
+    clear: both;
+}
+
+.content-add .ui-field-contain {
+    border: 0;
+}
+
+.content-add .ui-input-text {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #dedede;
+}
+
+.ui-listview>li h1, 
+.ui-listview>li h2, 
+.ui-listview>li h3, 
+.ui-listview>li h4, 
+.ui-listview>li h5, 
+.ui-listview>li h6 {
+    white-space: normal;
+}

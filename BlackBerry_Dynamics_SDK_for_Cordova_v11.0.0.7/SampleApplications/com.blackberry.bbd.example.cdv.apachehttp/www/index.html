@@ -1,0 +1,175 @@
+<!--
+    (c) 2021 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+        <title>Apache HTTP</title>
+
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="node_modules/underscore/underscore-min.js"></script>
+        <script src="node_modules/backbone/backbone-min.js"></script>
+        <script src="js/main_script.js"></script>
+
+        <!--
+            DEVNOTE: workaround for cordova ios 6.1.0 - 6.2.0 issue related to webview
+            We've already set viewport-fit=cover, but there is still white space at the first launch,
+            after resume from background, the white space disappears. Or turn to landscape and back, the white space disappears, too.
+            If use viewport-fit=cover and body {height:100%}, the height of html body still can not reach the bottom,
+            but the background-color of body can cover the fullscreen(so it's a body backgroundColor space rather than a white space).
+
+            Change height: 100% to height: 100vh fix the problem.
+
+            for details, see https://github.com/apache/cordova-ios/issues/933
+        -->
+        <script>
+            if (window.cordova.platformId == 'ios') {
+                newStyle = document.createElement('style');
+                newStyle.type = 'text/css';
+                newStyle.innerText = '.ui-mobile, .ui-mobile body { height:100vh }';
+                document.getElementsByTagName('HEAD').item(0).appendChild(newStyle);
+            }
+        </script>
+
+    </head>
+    <body>
+        <script id="sync-page" type="text/template" data-title="HTTP Request">
+            <p>Send an HTTP or HTTPS request to any web server on the Internet or behind the
+                Enterprese firewall and view the raw response headers and body.</p>
+            <div class="fields-custom ui-grid-a">
+                <div class="ui-block-a">
+                    <input type="text" value="" id="sync-request-url" placeholder="Enter the URL:" data-inline="true"/>
+                </div>
+                <div class="ui-block-b">
+                    <button class="action-button" id="send-btn" data-action="sendRequest">Go</button>
+                </div>
+            </div>
+
+            <div id="credentials" style="display: none;">
+                <p>Credentials required : </p>
+                <div>
+                    <label>username: </label>
+                    <input type="text" value="" id="sync-user-name" data-inline="true" placeholder="username"/>
+                </div>
+
+                <div>
+                    <label>password: </label>
+                    <input type="text" value="" id="sync-user-password" data-inline="true" placeholder="password"/>
+                </div>
+
+                <div id="user-domain-group">
+                    <label>domain: </label>
+                    <input type="text" value="" id="sync-user-domain" data-inline="true" placeholder="domain"/>
+                </div>
+            </div>
+
+            <input type="checkbox" name="peer-verification" id="peer-verification" class="custom" />
+            <label for="peer-verification">Disable peer verification</label>
+
+            <input type="checkbox" name="hostname-verification" id="hostname-verification" class="custom" />
+            <label for="hostname-verification">Disable hostname verification</label>
+
+            <input type="checkbox" name="async" id="async" class="custom" />
+            <label for="async">Asynchronous request</label>
+
+            <div class="select-wrapper" style="display: none;">
+                <label for="request-count">Select request count:</label>
+                <select name="request-count" id="request-count">
+                    <option value="1">-- select request count --</option>
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+
+            <div class="http-response" style="display: none;"></div>
+
+        </script>
+        <script id="upload-page" type="text/template" data-title="Upload a file">
+            <p>Upload a file to URL. The file is read from the assets
+                folder and uploaded using HTTP PUT or POST</p>
+            <p>You will need to find a webserver which can handle PUT and/or POST requests.</p>
+            <input type="text" value="" data-inline="true" id="server-request-url" placeholder="Type here custom server path"/>
+            <p>Type path</p>
+            <input type="text" value="" id="get-file-from-folder" data-inline="true" placeholder="file must be located in the assets folder"/>
+            <p>OR</p>
+            <input type="checkbox" name="fakefile" id="fakefile" class="custom" />
+            <label for="fakefile">Create fake file</label>
+
+            <section class="radio-buttons">
+                <input type="radio" name="request-method" id="radio-choice-1" value="choice-1" checked="checked" data-method="PUT"/>
+                <label for="radio-choice-1">Use HTTP PUT</label>
+
+                <input type="radio" name="request-method" id="radio-choice-2" value="choice-2" data-method="POST"/>
+                <label for="radio-choice-2">Use HTTP POST</label>
+            </section>
+
+            <div class="ui-block-button">
+                <button class="action-button" id="upload-btn" data-action="sendFile">Go</button>
+            </div>
+        </script>
+
+        <script id="about-page" type="text/template" data-title="ApacheHTTP GD example">
+            <p>This sample app demonstrates BlackBerry Dynamics Apache HTTP Client API.</p>
+            <p>Use menu to select different demos. <br/> A "HTTP Request" demo allows to
+                fetch and display HTML content for asked webpage in synchronous or asynchronous way. An "Uploading" demo shows how HTML POST and PUT works.</p>
+        </script>
+
+        <script id="popup-page" type="text/template">
+            <div class="popup-page"  data-role="page">
+                <div data-role="header" data-theme="f">
+                    <h1 class="title capitalize"></h1>
+                </div>
+            </div>
+        </script>
+
+        <div class="static-header">
+            <header>
+                <img id="back-btn" data-role="button" data-mini="true" data-inline="true" data-theme="f"
+                    data-icon="arrow-l" data-page="about-page" class="material-icons back-button page-button"
+                    src="img/outline-arrow_back_ios-24px.svg" style="display: none;">
+                <h1 id="application-title" class="title capitalize">Apache HTTP</h1>
+            </header>
+        </div>
+
+        <article data-role="content" class="main-content padding-content">
+        </article>
+
+        <div class="static-footer">
+            <footer>
+                <table class="menu full-width t-align-c custom-border-table">
+                    <tr>
+                        <td class="page-button" id="http-request" data-page="sync-page">
+                            <h5>HTTP Request</h5>
+                        </td>
+                        <td class="page-button" id="upload-file" data-page="upload-page">
+                            <h5>Upload a file</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="action-button" id="upload-logs" data-action="uploadLogs">
+                            <h5>Upload Debug Logs</h5>
+                        </td>
+                        <td class="page-button" id="view-info" data-page="about-page">
+                            <h5>Main page</h5>
+                        </td>
+                    </tr>
+                </table>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+/* Reset default styles */
+
+.ui-page.ui-page-theme-a.ui-page-active {
+    background-image: linear-gradient(#fff, #fff);
+}
+
+article {
+    display: none;
+    padding: 0 16px !important;
+    color: #838d96;
+    text-align: center;
+}
+
+#publish {
+    color: #35a7dc;
+    height: 50px;
+    width: 50px;
+    padding: 15px;
+}
+
+article h4 {
+    color: #4d5b67;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#bar {
+    color: #35a7dc;
+    font-size: 20px;
+}

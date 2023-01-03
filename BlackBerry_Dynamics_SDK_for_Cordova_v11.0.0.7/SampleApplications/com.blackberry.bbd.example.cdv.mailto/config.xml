@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.blackberry.bbd.example.cdv.mailto" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="Orientation" value="portrait" />
+    <name>MailTo</name>
+    <description>
+        Demonstrates how to use the "mailto" service to send email using the BlackBerry Work application
+    </description>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="file:*" />
+    <content src="index.html" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/android/resources/drawable-ldpi/com_bbd_default_logo.png" density="ldpi" />
+        <icon src="res/android/resources/drawable-mdpi/com_bbd_default_logo.png" density="mdpi" />
+        <icon src="res/android/resources/drawable-hdpi/com_bbd_default_logo.png" density="hdpi" />
+        <icon src="res/android/resources/drawable-xhdpi/com_bbd_default_logo.png" density="xhdpi" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <resource-file src="res/ios/LaunchScreen.storyboard" />
+        <resource-file src="res/ios/Images.xcassets" />
+        <config-file parent="UILaunchStoryboardName" target="*-Info.plist">
+            <string>LaunchScreen</string>
+        </config-file>
+        <hook type="after_platform_add" src="hooks/after_ios_platform_add.js" />
+    </platform>
+</widget>

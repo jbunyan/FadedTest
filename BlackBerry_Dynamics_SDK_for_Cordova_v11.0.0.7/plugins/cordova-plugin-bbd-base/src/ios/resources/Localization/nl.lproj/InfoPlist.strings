@@ -1,0 +1,6 @@
+/*
+ * (c) 2020 BlackBerry Limited. All rights reserved.
+ */
+
+"NSFaceIDUsageDescription" = "Hiermee wordt geverifieerd zonder wachtwoord.";
+"NSCameraUsageDescription" = "Cameragebruik toestaan om QR-code te scannen";

@@ -1,0 +1,132 @@
+<!--
+    (c) 2019 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+    <title>SQLite</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js"></script>
+    <script src="js/main_script.js"></script>
+
+</head>
+
+<body>
+    <script id="departments-template" type="text/template">
+        <div class="listview-wrapper">
+            <div data-role="fieldcontain" class="required-field">
+                <input type="text" name="department_name" id="department_name" value="" placeholder="Enter department name" />
+                <div class="error-msg">
+                    <p>This field is required</p>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="offices-template" type="text/template">
+        <div data-role="fieldcontain" class="form-field-wrapper">
+            <div data-role="fieldcontain" class="required-field">
+                <input type="text" class="form-field-wrapper" name="office_name" id="office_name" value="" placeholder="Enter office name" />
+                <div class="error-msg">
+                    <p>This field is required</p>
+                </div>
+            </div>
+            <div data-role="fieldcontain" class="required-field">
+                <input type="text" name="latitude" id="latitude" placeholder="Enter office latitude" />
+                <select id="latitude-direction" class="location">
+                    <option value="&deg;N">&deg;N</option>
+                    <option value="&deg;S">&deg;S</option>
+                </select>
+                <div class="error-msg">
+                    <p>This field is required. Only float value.</p>
+                </div>
+            </div>
+            <div data-role="fieldcontain" class="required-field">
+                <input type="text" name="longitude" id="longitude" placeholder="Enter office longitude" />
+                <select id="longitude-direction" class="location">
+                    <option value="&deg;E">&deg;E</option>
+                    <option value="&deg;W">&deg;W</option>
+                </select>
+                <div class="error-msg">
+                    <p>This field is required. Only float value.</p>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="employees-template" type="text/template">
+        <div class="listview-wrapper">
+            <div data-role="fieldcontain" class="required-field">
+                <input type="text" name="employee_name" id="employee_name" value="" placeholder="Enter employee name" />
+                <div class="error-msg">
+                    <p>This field is required</p>
+                </div>
+            </div>
+        </div>
+        <select name="department_select" id="department_select">
+            <option value="">SELECT DEPARTMENT</option>
+        </select>
+        <select name="office_select" id="office_select">
+            <option value="">SELECT OFFICE</option>
+        </select>
+    </script>
+    <div id="container-details" class="d-none page">
+        <div class="static-header">
+            <header>
+                <img class="material-icons" id="back-btn" src="img/outline-arrow_back_ios-24px.svg">
+                <h1 id="details-title" class="capitalize"></h1>
+            </header>
+        </div>
+        <article class="content-details padding-content">
+        </article>
+    </div>
+    <div id="container-add" class="d-none page">
+        <div class="static-header">
+            <header>
+                <img class="material-icons" id="back-btn" src="img/outline-arrow_back_ios-24px.svg">
+                <h1 id="new-title"></h1>
+                <img class="material-icons" id="add-new-entry" src="img/outline-done-24px.svg">
+            </header>
+        </div>
+        <article class="content-add padding-content">
+        </article>
+    </div>
+    <div id="container-list-wrapper" class="page">
+        <div class="static-list">
+            <header>
+                <img class="material-icons" id="add-element" src="img/round-add_circle_outline-24px.svg">
+                <h1 id="application-title">SQLite</h1>
+                <img class="material-icons" id="edit-element" src="img/outline-settings-24px.svg">
+            </header>
+            <div class="nav-wrapper">
+                <div data-role="controlgroup" data-theme="a" data-type="horizontal" class="localnav">
+                    <a href="#" data-role="button" data-name="departments" data-title="department" data-theme="f" class="pageButton departments btn-active">Departments</a>
+                    <a href="#" data-role="button" data-name="employees" data-title="employee" data-theme="f" class="pageButton employees">Employees</a>
+                    <a href="#" data-role="button" data-name="offices" data-title="office" data-theme="f" class="pageButton offices">Offices</a>
+                </div>
+            </div>
+        </div>
+        <article class="content-list-wrapper">
+            <h1 id="content-list-title">Departments</h1>
+            <div class="listview-wrapper">
+                <ul data-role="listview" data-inset="true" id="list-container-list" data-split-icon="delete" data-split-theme="d">
+                </ul>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-bbd-launcher",
+  "version": "1.0.0",
+  "description": "The Launcher plugin is used to set up the launcher in an application.",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "name": "cordova-plugin-bbd-launcher",
+    "version": "1.0.0",
+    "private": true
+  },
+  "author": "",
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "plugins": [],
+  "devDependencies": {},
+  "dependencies": {}
+}

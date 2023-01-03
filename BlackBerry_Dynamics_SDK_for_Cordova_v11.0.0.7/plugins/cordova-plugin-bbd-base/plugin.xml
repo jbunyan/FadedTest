@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-base" version="4.0.0">
+    <name>Base Plugin</name>
+    <description>
+        This is Base plugin. It adds all the needed configuration to enable using
+        BlackBerry Dynamics in your Cordova application.
+        All the other BlackBerry Dynamics Cordova plugins require the Base plugin to be installed.
+    </description>
+    <keywords>cordova,plugin,base,gd</keywords>
+    <license>(c) 2022 BlackBerry Limited. All rights reserved.</license>
+    <info>
+        This plugin enables using BlackBerry Dynamics in your Cordova application.
+    </info>
+
+    <engines>
+        <engine name="cordova-android" version=">=9.0.0"/>
+        <engine name="cordova-ios" version=">=6.0.0"/>
+    </engines>
+
+    <!-- Android -->
+    <platform name="android">
+        <framework src="scripts/gradle/bbd.gradle" custom="true" type="gradleReference" />
+        <framework src="androidx.legacy:legacy-support-v4:1.0.0" />
+        <framework src="androidx.appcompat:appcompat:1.0.0" />
+        <resource-file src="assets/android/settings.json" target="assets/settings.json" />
+        <resource-file src="assets/android/com.blackberry.dynamics.settings.json" target="assets/com.blackberry.dynamics.settings.json" />
+        <resource-file src="src/development-tools-info.json" target="assets/development-tools-info.json" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
+            <application android:label="@string/app_name"
+                android:name="com.good.gd.cordova.core.BBDCordovaApp"
+                android:fullBackupContent="@xml/gd_backup_scheme"
+                android:supportsRtl="false"/>
+        </edit-config>
+
+        <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application/activity" mode="merge">
+            <activity android:name="com.good.gd.cordova.core.MainActivity"/>
+        </edit-config>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BBDMailTo">
+                <param name="android-package" value="com.good.gd.cordova.core.mailto.BBDMailToHandler" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="scripts/gradle/gradle.properties" target-dir="src/.." />
+        <lib-file src="src/android/libs/bbd-base.aar"/>
+        <hook type="after_plugin_install" src="scripts/hooks/android/afterBasePluginInstall.js" />
+        <hook type="before_compile" src="scripts/hooks/android/beforeCompile.js" />
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="BlackBerryDynamics" options=":podspec => 'https://software.download.blackberry.com/repository/framework/dynamics/ios/11.0.1.137/BlackBerryDynamics-11.0.1.137.podspec'" />
+            </pods>
+        </podspec>
+        <framework src="WebKit.framework" weak="true" />
+        <framework src="LocalAuthentication.framework" />
+        <framework src="DeviceCheck.framework" />
+        <framework src="SafariServices.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreData.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="Security.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="AuthenticationServices.framework" />
+        <framework src="libz.tbd" />
+        <framework src="libnetwork.tbd" />
+        <framework src="src/ios/frameworks/BbdBasePlugin.framework" custom="true" />
+        <source-file src="src/ios/BbdBase.swift" />
+        <resource-file src="src/development-tools-info.json" />
+        <config-file parent="/*" target="config.xml">
+            <preference name="deployment-target" value="14.0" />
+        </config-file>
+        <config-file parent="GDConsoleLogger" target="*-Info.plist">
+            <string>GDFilterDetailed</string>
+        </config-file>
+        <config-file parent="BlackBerryDynamics" target="*-Info.plist">
+            <key>BlackBerryDynamics</key>
+             <dict>
+                <key>CheckEventReceiver</key>
+                <false></false>
+            </dict>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>Allow camera usage</string>
+        </config-file>
+        <config-file parent="GDApplicationID" target="*-Info.plist">
+            <string>$PACKAGE_NAME</string>
+        </config-file>
+        <config-file parent="GDApplicationVersion" target="*-Info.plist">
+            <string>1.0.0.0</string>
+        </config-file>
+        <config-file parent="CFBundleURLTypes" target="*-Info.plist">
+            <array>
+                <dict>
+                    <key>CFBundleURLName</key>
+                    <string>$PACKAGE_NAME</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>$PACKAGE_NAME.sc2.1.0.0.0</string>
+                        <string>$PACKAGE_NAME.sc2</string>
+                        <string>$PACKAGE_NAME.sc3.1.0.0.0</string>
+                        <string>$PACKAGE_NAME.sc3</string>
+                        <string>com.good.gd.discovery</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+        <resource-file src="src/ios/Entitlements.plist" />
+        <hook type="after_plugin_install" src="scripts/hooks/ios/afterBasePluginInstall.js" />
+        <hook type="before_compile" src="scripts/hooks/ios/beforeCompile.js" />
+        <hook type="before_compile" src="scripts/hooks/ios/addLocalization.js" />
+    </platform>
+
+    <hook type="after_plugin_add" src="scripts/hooks/afterPluginAdd.js" />
+    <hook type="after_plugin_install" src="scripts/hooks/afterBasePluginInstall.js" />
+    <hook type="before_plugin_rm" src="scripts/hooks/beforePluginRemove.js" />
+    <hook type="after_prepare" src="scripts/hooks/handleCordovaInfo.js" />
+</plugin>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-storage"
+        version="2.0.0">
+
+  <name>Storage Plugin</name>
+
+  <description>The Storage plugin in an interface representing a secure localStorage.</description>
+
+  <keywords>cordova,plugin,storage,localStorage,gd</keywords>
+
+  <license>(c) 2022 BlackBerry Limited. All rights reserved.</license>
+
+  <info>
+    The Storage plugin is dependent on the Base, File and SQLite Storage plugins, so please make sure these plugins are installed correctly.
+  </info>
+
+  <dependency id="cordova-plugin-bbd-base" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-base" version="^4.0.0" />
+
+  <dependency
+    id="cordova-plugin-bbd-file"
+    url="git+https://github.com/blackberry/blackberry-dynamics-cordova-plugins#file"
+    version="^1.3.0" />
+  <dependency
+    id="cordova-plugin-bbd-sqlite-storage"
+    url="git+https://github.com/blackberry/blackberry-dynamics-cordova-plugins#sqlite-storage"
+    version="^1.3.0" />
+
+  <engines>
+    <engine name="cordova-android" version=">=9.0.0"/>
+    <engine name="cordova-ios" version=">=6.0.0"/>
+  </engines>
+
+  <!-- Android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="GDStorage" >
+          <param name="android-package" value="com.good.gd.cordova.plugins.GDStoragePlugin"/>
+          <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/android/GDStorage.js" name="localStorage">
+      <clobbers target="window.localStorage" />
+    </js-module>
+
+    <lib-file src="src/android/libs/bbd-storage.jar" />
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="GDStorage">
+        <param name="ios-package" value="GDCStoragePlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/ios/GDStorage.js" name="localStorage">
+      <clobbers target="window.localStorage" />
+    </js-module>
+
+    <framework src="src/ios/frameworks/BbdStoragePlugin.framework" custom="true" />
+  </platform>
+
+</plugin>

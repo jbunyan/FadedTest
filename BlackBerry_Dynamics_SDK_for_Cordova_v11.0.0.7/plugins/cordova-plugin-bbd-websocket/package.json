@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-bbd-websocket",
+  "version": "1.0.0",
+  "description": "WebSocket plugin implements the secure WebSocket APIs.",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "name": "cordova-plugin-bbd-websocket",
+    "version": "1.0.0",
+    "private": true
+  },
+  "author": "",
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "plugins": [],
+  "devDependencies": {},
+  "dependencies": {}
+}

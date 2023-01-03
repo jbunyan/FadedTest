@@ -1,0 +1,12 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.policy.www",
+  "description": "BlackBerry Dynamics Policy sample application UI",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.policy.www",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE IN ROOT FOLDER",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

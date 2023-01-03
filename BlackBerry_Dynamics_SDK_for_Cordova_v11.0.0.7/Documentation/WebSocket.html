@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: WebSocket</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: WebSocket</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>WebSocket<span class="signature">(url, protocols<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Implements the secure WebSocket API based on standard WebSocket specification
+(see <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket</a>).
+<br/>
+WebSocket object provides the API for creating and managing a WebSocket connection
+to a server, as well as for sending and receiving data on the connection.
+<br/>
+WebSocket supports both `ws://` and `wss://` protocols.
+<br/>
+WebSocket supports text or binary (`Blob`, `ArrayBuffer`) data types for sending and receiving messages.
+<br/>
+To construct a WebSocket, use the WebSocket() constructor.
+<br/>
+WebSocket supports both callback and event handlers for "open", "message", "close", "error" events.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="WebSocket"><span class="type-signature"></span>new WebSocket<span class="signature">(url, protocols<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">A string giving the URL over which the connection is established.
+"ws" and "wss" schemes are supported.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>protocols</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    []
+                
+                </td>
+            
+
+            <td class="description last">Either a single protocol string or an array of protocol strings.
+These strings are used to indicate sub-protocols, so that a single server can implement
+multiple WebSocket sub-protocols.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {'headers':[]}
+                
+                </td>
+            
+
+            <td class="description last">An object including 'headers' property with an array of objects
+using to pass custom headers for creating WebSocket connection.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Returns the URL that was used to establish the WebSocket connection.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>readyState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Returns the state of the WebSocket object's connection.
+Possible values are:
+<ul>
+ <li>0 - state CONNECTING, socket has been created. The connection is not yet open</li>
+ <li>1 - state OPEN, the connection is open and ready to communicate</li>
+ <li>2 - state CLOSING, the connection is in the process of closing</li>
+ <li>3 - state CLOSED, the connection is closed or couldn't be opened</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>protocols</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Returns the subprotocol selected by the server, if any.
+It can be used in conjunction with the array form of the constructor's second argument
+to perform subprotocol negotiation.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>extensions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Returns the extensions selected by the server, if any.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>binaryType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Controls the binary data type being received over the WebSocket connection.
+Can be set to change how binary data is returned. The default is "blob".
+Possible values are:
+<ul>
+ <li>"blob" - uses Blob objects for binary data</li>
+ <li>"arraybuffer" - uses ArrayBuffer objects for binary data</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onopen</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function is the callback handler that is called
+when the connection is successfully opened.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onmessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function is the callback handler that is called
+when a message is received from the server.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onclose</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function is the callback handler that is called
+when the connection is closed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onerror</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function is the callback handler that is called
+when an error occurs.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html">cordova-plugin-bbd-websocket/assets/www/WebSocket.js</a>, <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(code<span class="signature-attributes">opt</span>, reason<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to close the WebSocket connection.
+Function optionally is using code as the WebSocket connection close code and
+reason as the the WebSocket connection close reason.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>code</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    1000
+                
+                </td>
+            
+
+            <td class="description last">A numeric value indicating the status code explaining why the connection
+is being closed. If this parameter is not specified, a default value of 1000 (Normal Closure) is used.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reason</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'Normal closure'
+                
+                </td>
+            
+
+            <td class="description last">A human-readable string explaining why the connection
+is closing.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html">cordova-plugin-bbd-websocket/assets/www/WebSocket.js</a>, <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html#line412">line 412</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Example of WebSocket usage with event approach.
+// Also, see the example below with callback approach usage (it is added to WebSocket.send()).
+
+var webSocket = new WebSocket('wss://echo.wss-websocket.net');
+var dataString = 'test string';
+var blob = new Blob([dataString], {
+  type: 'text/plain'
+});
+
+webSocket.addEventListener('open', function(event) {
+  console.log('open event:', event);
+  webSocket.send(blob);
+});
+
+webSocket.addEventListener('message', function(event) {
+  console.log('message event:', event);
+  console.log('message', event.data);
+  console.log('is Blob message:', event.data instanceof Blob);
+  webSocket.close();
+})
+
+webSocket.addEventListener('close', function(event) {
+  console.log('close event:', event);
+});
+
+webSocket.addEventListener('error', function(event) {
+  console.log('error event:', event);
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="send"><span class="type-signature"></span>send<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to send data using opened socket connection.
+Data can be a string, a Blob, or an ArrayBuffer.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">ArrayBuffer</span>
+|
+
+<span class="param-type">Blob</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The data to send to the server.
+It can be one of the following types: "string", "Blob", "ArrayBuffer".</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html">cordova-plugin-bbd-websocket/assets/www/WebSocket.js</a>, <a href="cordova-plugin-bbd-websocket_assets_www_WebSocket.js.html#line479">line 479</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Example of WebSocket usage with callback approach.
+
+ var webSocket = new WebSocket(
+   "wss://echo.wss-websocket.net",
+   ["soap", "wamp"],
+   { headers: [{'Authorization': 'Basic someEncodedString'}]}
+ );
+
+ webSocket.onopen = function(event) {
+   console.log('open event:', event);
+   webSocket.send('Test message');
+ }
+
+ webSocket.onmessage = function(event) {
+   console.log('message event:', event);
+   console.log('message', event.data);
+   webSocket.close();
+ }
+
+ webSocket.onclose = function(event) {
+   console.log('close event:', event);
+ }
+
+ webSocket.onerror = function(event) {
+   console.log('error event:', event);
+ }</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GDAppKinetics.html">GDAppKinetics</a></li><li><a href="GDApplication.html">GDApplication</a></li><li><a href="GDCacheController.html">GDCacheController</a></li><li><a href="GDFormData.html">GDFormData</a></li><li><a href="GDHttpRequest.html">GDHttpRequest</a></li><li><a href="GDHttpResponse.html">GDHttpResponse</a></li><li><a href="GDInterAppCommunication.html">GDInterAppCommunication</a></li><li><a href="GDPushChannel.html">GDPushChannel</a></li><li><a href="GDPushChannelResponse.html">GDPushChannelResponse</a></li><li><a href="GDSecureStorage.html">GDSecureStorage</a></li><li><a href="GDServerSideServices.html">GDServerSideServices</a></li><li><a href="GDSocket.html">GDSocket</a></li><li><a href="GDSocketResponse.html">GDSocketResponse</a></li><li><a href="GDSpecificPolicies.html">GDSpecificPolicies</a></li><li><a href="GDTokenHelper.html">GDTokenHelper</a></li><li><a href="Launcher.html">Launcher</a></li><li><a href="WebSocket.html">WebSocket</a></li><li><a href="XMLHttpRequest.html">XMLHttpRequest</a></li></ul>
+<h3>Other</h3><ul><li><a href=LICENCES.html>LICENCES</a></li></ul></nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 19 2022 06:05:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

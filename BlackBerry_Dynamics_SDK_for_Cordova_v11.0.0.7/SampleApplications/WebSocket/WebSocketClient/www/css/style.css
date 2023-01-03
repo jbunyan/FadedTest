@@ -1,0 +1,191 @@
+/*
+ * (c) 2021 BlackBerry Limited. All rights reserved.
+ */
+
+.ui-page.ui-page-theme-a.ui-page-active {
+    height: 100vh;
+}
+
+.page, .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body .fields-custom .ui-block-a {
+    width: 75%;
+    float: left;
+    padding-top: 3px;
+}
+
+body .fields-custom .ui-block-b {
+    width: 25%;
+    float: right;
+}
+
+.ui-input-text {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #dedede;
+}
+
+.fields-custom .action-button,
+.ui-block-button .action-button {
+    box-shadow: none;
+    background-color: #fff;
+    color: #35a7dc;
+    border: 1px solid #35a7dc;
+    font-weight: normal;
+    width: 50%;
+}
+
+.fields-custom button {
+    width: 80% !important;
+    margin: 10px auto !important;
+}
+
+.ui-block-button .action-button {
+    margin: 0 auto !important;
+}
+
+.btn-active {
+    background-color: #35a7dc !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border: 1px solid #35a7dc !important;
+}
+
+.radio-buttons {
+    margin: 25px 0;
+}
+
+button {
+    margin: 15px auto !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.ui-select .ui-btn {
+    box-shadow: none;
+    background-image:linear-gradient(#fff, #fff);
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal;
+    text-shadow: none !important;
+}
+
+.ui-select .ui-btn.ui-focus {
+    box-shadow: none;
+    text-shadow: none;
+    background-image: linear-gradient(#2a86b0, #2a86b0);
+    color: #fff !important;
+    border: 1px solid #2a86b0 !important;
+    font-weight: normal;
+}
+
+.ui-focus {
+    box-shadow: none !important;
+}
+
+.ui-controlgroup-horizontal .ui-btn {
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal;
+    background-image: linear-gradient(#fff, #fff);
+    text-shadow: none !important;
+}
+
+.ui-controlgroup-horizontal .btn-active,
+.ui-controlgroup-horizontal .ui-btn-active {
+    background-image: linear-gradient(#35a7dc, #35a7dc);
+    background-color: #35a7dc !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border: 1px solid #35a7dc !important;
+}
+
+.ui-controlgroup-horizontal .ui-btn.ui-first-child {
+    -webkit-border-top-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    -webkit-border-bottom-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.ui-controlgroup-horizontal .ui-btn.ui-last-child {
+    -webkit-border-top-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    -webkit-border-bottom-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.ui-controlgroup-horizontal .ui-controlgroup-controls {
+    display: flex;
+    flex-direction: row;
+}
+
+.messages {
+    /* workaround for issue with white space on iPhone in the bottom */
+    height: 1px;
+}
+
+#message-body {
+    max-height: 55px;
+    padding: 0px 10px;
+}
+
+.messages-wrapper {
+    flex: 1;
+    overflow: scroll;
+    padding: 5px;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+.message {
+    padding: 0 5px;
+    color: #4d5b67;
+}
+
+.message pre{
+    font-family: inherit;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.send-message-wrapper {
+    padding: 10px 0;
+}
+
+.select-wrapper {
+    margin: 0 auto;
+    width: 85%;
+    margin-bottom: 15px;
+}
+
+.select-wrapper label {
+    text-align: center;
+    color: #4d5b67;
+}
+
+.ui-radio label.ui-btn {
+    text-align: center;
+}
+
+.connection-wrapper input {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+fieldset.message-types .ui-radio {
+    width: 100%;
+}

@@ -1,0 +1,190 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+.error-msg {
+    color: red;
+    display: none;
+}
+
+.error-required .error-msg {
+    display: block;
+}
+
+.ui-page.ui-page-theme-a.ui-page-active {
+    background-image: linear-gradient(#fff, #fff);
+}
+
+.static-list {
+    width: 100%;
+    z-index: 2;
+    height: 123px;
+    height: calc(constant(safe-area-inset-top) + 123px);
+    height: calc(env(safe-area-inset-top) + 123px);
+    position: fixed;
+}
+
+#details-title {
+    padding-right: 44px;
+}
+
+#new-title,
+#details-title,
+.capitalize {
+    text-transform: capitalize;
+}
+
+#add-element,
+#back-btn {
+    float: left;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-left: 16px;
+}
+
+#edit-element,
+#add-new-entry {
+    float: right;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-right: 16px;
+}
+
+.localnav a {
+    width: 33%;
+}
+
+.nav-wrapper {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #dedede !important;
+}
+
+.ui-controlgroup-horizontal {
+    padding: .5em 0;
+    margin: 0;
+}
+
+.ui-controlgroup-horizontal .ui-controlgroup-controls {
+    display: flex;
+    padding: 0 1em;
+}
+
+.ui-controlgroup-horizontal a {
+    border: 1px solid #35a7dc !important;
+}
+
+.ui-controlgroup-horizontal .ui-btn {
+    color: #35a7dc !important;
+    font-weight: normal;
+}
+
+.ui-controlgroup-horizontal .btn-active {
+    background-color: #35a7dc !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border: 1px solid #35a7dc !important;
+}
+
+.d-none {
+    display: none;
+}
+
+.content-list-wrapper {
+    top: 123px;
+    top: calc(constant(safe-area-inset-top) + 123px);
+    top: calc(env(safe-area-inset-top) + 123px);
+}
+
+#list-container-list {
+    box-shadow: none;
+    background-color: #f6f6f6;
+    border-radius: 0;
+    border-top: 2px solid #127cc3 !important;
+}
+
+#list-container-list li {
+    border-bottom: 1px solid #dedede;
+    text-shadow: none;
+    background-image:linear-gradient(#f6f6f6, #f6f6f6);
+}
+
+#list-container-list a {
+    font-weight: normal;
+    color: #838d96;
+}
+
+.content-details {
+    margin-top: 20px;
+    padding-left: 16px !important;
+    border-top: 1px solid #dedede !important;
+}
+
+.content-details h1 {
+    color: #082c44;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.content-details p {
+    color: #838d96;
+    border-bottom: 1px solid #dedede !important;
+    padding-bottom: 10px;
+}
+
+.content-details span {
+    color: #838d96;
+}
+
+#content-list-title {
+    text-transform: capitalize;
+    color: #838d96;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0 0 16px;
+}
+
+.content-add {
+    padding: 0 20px !important;
+    clear: both;
+}
+
+.required-field {
+    border: 0;
+}
+
+.ui-input-text {
+    padding: 0;
+    border: 0 !important;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #dedede !important;
+}
+
+.ui-select {
+    margin-top: 10px;
+}
+
+.ui-select .ui-btn {
+    box-shadow: none;
+    background-image:linear-gradient(#fff, #fff);
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal;
+}
+
+.ui-select .ui-btn.ui-focus {
+    box-shadow: none;
+    text-shadow: none;
+    background-image: linear-gradient(#2a86b0, #2a86b0);
+    color: #fff !important;
+    border: 1px solid #2a86b0 !important;
+    font-weight: normal;
+}
+
+.ui-focus {
+    box-shadow: none !important;
+}

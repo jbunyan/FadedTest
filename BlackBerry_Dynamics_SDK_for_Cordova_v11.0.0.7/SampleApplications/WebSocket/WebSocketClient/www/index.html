@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    (c) 2021 BlackBerry Limited. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+        <title>WebSocket Client</title>
+
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="node_modules/underscore/underscore-min.js"></script>
+        <script src="node_modules/backbone/backbone-min.js"></script>
+        <script src="js/main_script.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+
+    <body>
+        <div id="main-page" class="page">
+            <header>
+                <h1 id="application-title">WebSocket Client</h1>
+            </header>
+
+            <div class="main-content">
+                <div class="connection-wrapper">
+                    <input type="text" value="" id="connection-url" placeholder="Enter the URL:" data-inline="true" />
+                    <button class="action-button" id="connect-btn">Connect</button>
+                </div>
+
+                <div class="messages-wrapper">
+                    <ul class="messages"></ul>
+                </div>
+
+                <div class="send-message-wrapper" style="display: none;">
+                    <div class="select-wrapper">
+                        <label for="response-type">Response binary type</label>
+                        <select name="response-type" id="response-type">
+                            <option value="blob">Blob</option>
+                            <option value="arraybuffer">ArrayBuffer</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="message-types" data-role="controlgroup" data-type="horizontal">
+                        <input type="radio" name="message-type" id="message-type-text" value="Text" checked="checked" />
+                        <label for="message-type-text">Text</label>
+
+                        <input type="radio" name="message-type" id="message-type-blob" value="Blob" />
+                        <label for="message-type-blob">Blob</label>
+
+                        <input type="radio" name="message-type" id="message-type-arraybuffer" value="ArrayBuffer" />
+                        <label for="message-type-arraybuffer">ArrayBuffer</label>
+                    </fieldset>
+
+                    <div class="fields-custom ui-grid-a">
+                        <div class="ui-block-a">
+                            <textarea id="message-body" name="message-body" placeholder="Type a message" rows="3"></textarea>
+                        </div>
+                        <div class="ui-block-b">
+                            <button class="action-button" id="send-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.unittest",
+  "displayName": "UnitTest",
+  "version": "1.0.0",
+  "description": "Demonstrates how to use all APIs supported in this version of the Cordova Plugin release.",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.unittest",
+    "version": "1.0.0",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "install": "cd www && npm install"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.0",
+    "cordova-plugin-bbd-base": "file:../../plugins/cordova-plugin-bbd-base",
+    "cordova-plugin-bbd-storage": "file:../../plugins/cordova-plugin-bbd-storage",
+    "cordova-plugin-bbd-file": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#file",
+    "cordova-plugin-bbd-httprequest": "file:../../plugins/cordova-plugin-bbd-httprequest",
+    "cordova-plugin-bbd-appkinetics": "file:../../plugins/cordova-plugin-bbd-appkinetics",
+    "cordova-plugin-bbd-application": "file:../../plugins/cordova-plugin-bbd-application",
+    "cordova-plugin-bbd-file-transfer": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#file-transfer",
+    "cordova-plugin-bbd-interappcommunication": "file:../../plugins/cordova-plugin-bbd-interappcommunication",
+    "cordova-plugin-bbd-push": "file:../../plugins/cordova-plugin-bbd-push",
+    "cordova-plugin-bbd-serversideservices": "file:../../plugins/cordova-plugin-bbd-serversideservices",
+    "cordova-plugin-bbd-socket": "file:../../plugins/cordova-plugin-bbd-socket",
+    "cordova-plugin-bbd-websocket": "file:../../plugins/cordova-plugin-bbd-websocket",
+    "cordova-plugin-bbd-specificpolicies": "file:../../plugins/cordova-plugin-bbd-specificpolicies",
+    "cordova-plugin-bbd-sqlite-storage": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#sqlite-storage",
+    "cordova-plugin-bbd-tokenhelper": "file:../../plugins/cordova-plugin-bbd-tokenhelper",
+    "cordova-plugin-bbd-launcher": "file:../../plugins/cordova-plugin-bbd-launcher",
+    "cordova-plugin-bbd-media-capture": "git+https://github.com/blackberry/BlackBerry-Dynamics-Cordova-Plugins.git#media-capture"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.0",
+    "fs-extra": "^2.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-bbd-base": {},
+      "cordova-plugin-bbd-storage": {},
+      "cordova-plugin-bbd-file": {},
+      "cordova-plugin-bbd-httprequest": {},
+      "cordova-plugin-bbd-appkinetics": {},
+      "cordova-plugin-bbd-application": {},
+      "cordova-plugin-bbd-file-transfer": {},
+      "cordova-plugin-bbd-interappcommunication": {},
+      "cordova-plugin-bbd-push": {},
+      "cordova-plugin-bbd-serversideservices": {},
+      "cordova-plugin-bbd-socket": {},
+      "cordova-plugin-bbd-websocket": {},
+      "cordova-plugin-bbd-specificpolicies": {},
+      "cordova-plugin-bbd-sqlite-storage": {},
+      "cordova-plugin-bbd-tokenhelper": {},
+      "cordova-plugin-bbd-launcher": {},
+      "cordova-plugin-bbd-media-capture": {}
+    }
+  }
+}

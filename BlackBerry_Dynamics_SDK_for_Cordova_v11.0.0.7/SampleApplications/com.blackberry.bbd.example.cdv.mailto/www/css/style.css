@@ -1,0 +1,121 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+#file-readers {
+    margin: 0 30px 30px 30px;
+}
+
+#attachments-wrapper {
+    display: none;
+    width: 100%;
+}
+
+#attachments-wrapper fieldset {
+    padding-top: 2px;
+}
+
+#attachments-wrapper label {
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+#attachments-wrapper input {
+    margin: 10px;
+}
+
+.ui-controlgroup-horizontal .ui-controlgroup-controls {
+    display: block;
+    padding: 0 2em;
+}
+
+.ui-controlgroup,
+fieldset.ui-controlgroup {
+    padding: .5em 0;
+    margin: 0;
+}
+
+input.error {
+    border: 1px solid red !important;
+}
+
+p.validation-error {
+    color: red;
+    display: none;
+}
+
+header {
+    background-color: #fff;
+    color: #000;
+    border: 0;
+    border-bottom: 2px solid #35a7dc;
+}
+
+#add-attachments {
+    float: left;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-left: 16px;
+}
+
+#send {
+    float: right;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    padding-right: 16px;
+}
+  
+#to-group,
+#cc-group,
+#bcc-group,
+#subject-group {
+    border-bottom: 1px solid #dedede;
+    height:40px;
+}
+
+#to-group label,
+#cc-group label,
+#bcc-group label,
+#subject-group label {
+    float: left;
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #838d96;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#to-group .ui-input-text,
+#cc-group .ui-input-text,
+#bcc-group .ui-input-text,
+#subject-group .ui-input-text {
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    display: inline-block;
+    width: 75%;
+    border-radius: 0;
+    height:40px;
+    background-image:linear-gradient(#f9f9f9, #f9f9f9);
+}
+
+#to-group input,
+#cc-group input,
+#bcc-group input,
+#subject-group input {
+    padding: 0;
+    margin: 5px 0 0 5px;
+}
+
+#body {
+    border:0;
+    box-shadow: none;
+    margin: 0;
+    padding-left: 16px;
+    background-image:linear-gradient(#f9f9f9, #f9f9f9);
+}
+
+.ui-checkbox .custom {
+    display: none;
+}

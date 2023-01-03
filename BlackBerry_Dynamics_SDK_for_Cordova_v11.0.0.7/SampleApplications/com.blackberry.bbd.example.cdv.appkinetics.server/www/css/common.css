@@ -1,0 +1,87 @@
+/*
+ * (c) 2019 BlackBerry Limited. All rights reserved.
+ */
+
+/* Reset default styles */
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, div, a, header, footer, button {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.ui-page.ui-page-theme-a.ui-page-active {
+    background-image: linear-gradient(#fff, #fff);
+}
+
+.static-header {
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+}
+
+header {
+    background-color: #35a7dc;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+    display: inline-block;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    font-weight: bold;
+}
+
+/* Main content */
+
+article {
+    width: 100%;
+    float: left;
+    position: relative;
+    top: 65px;
+    top: calc(constant(safe-area-inset-top) + 65px);
+    top: calc(env(safe-area-inset-top) + 65px);
+    box-sizing: border-box;
+    padding: 0 !important;
+}
+
+button {
+    width: 50% !important;
+    margin: 20px auto !important;
+    padding: 10px !important;
+    background-color: #fff !important;
+    color: #35a7dc !important;
+    border: 1px solid #35a7dc !important;
+    font-weight: normal !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+button:active {
+    background-color: #2a86b0 !important;
+    border: 1px solid #2a86b0 !important;
+    color: #fff !important;
+}
+
+button:disabled {
+    background-color: #fff !important;
+    border: 1px solid #213241 !important;
+    color: #213241 !important;
+    opacity: 0.12;
+}

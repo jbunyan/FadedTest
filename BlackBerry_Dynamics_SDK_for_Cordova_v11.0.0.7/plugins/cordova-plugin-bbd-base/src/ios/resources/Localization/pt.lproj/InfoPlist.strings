@@ -1,0 +1,6 @@
+/*
+ * (c) 2020 BlackBerry Limited. All rights reserved.
+ */
+
+"NSFaceIDUsageDescription" = "Permite a autenticação sem uma senha.";
+"NSCameraUsageDescription" = "Permitir uso da câmera para digitalizar um código QR";

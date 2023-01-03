@@ -1,0 +1,31 @@
+{
+  "name": "com.blackberry.bbd.example.cdv.policy",
+  "version": "2.0.0",
+  "displayName": "Policy",
+  "description": "Illustrates working with application-specific policies and server-side services.",
+  "repository": {
+    "name": "com.blackberry.bbd.example.cdv.policy",
+    "version": "2.0.0",
+    "private": true
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "install": "cd www && npm install"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.0",
+    "cordova-plugin-bbd-base": "file:../../plugins/cordova-plugin-bbd-base",
+    "cordova-plugin-bbd-serversideservices": "file:../../plugins/cordova-plugin-bbd-serversideservices",
+    "cordova-plugin-bbd-specificpolicies": "file:../../plugins/cordova-plugin-bbd-specificpolicies",
+    "cordova-plugin-network-information": "^2.0.1"
+  },
+  "devDependencies": {},
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-bbd-base": {},
+      "cordova-plugin-bbd-serversideservices": {},
+      "cordova-plugin-bbd-specificpolicies": {},
+      "cordova-plugin-network-information": {}
+    }
+  }
+}

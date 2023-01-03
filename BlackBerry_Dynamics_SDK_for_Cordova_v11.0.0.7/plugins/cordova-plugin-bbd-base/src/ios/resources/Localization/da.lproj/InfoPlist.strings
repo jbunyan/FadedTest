@@ -1,0 +1,6 @@
+/*
+ * (c) 2020 BlackBerry Limited. All rights reserved.
+ */
+
+"NSFaceIDUsageDescription" = "Muliggør godkendelse uden adgangskode.";
+"NSCameraUsageDescription" = "Tillad kamerabrug til at scanne en QR-kode";

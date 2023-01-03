@@ -1,0 +1,85 @@
+<!--
+    (c) 2019 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+        <title>AppKinetics Server</title>
+
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/common.css">
+        <link rel="stylesheet"  href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="node_modules/underscore/underscore-min.js"></script>
+        <script src="node_modules/backbone/backbone-min.js"></script>
+        <script src="node_modules/async/dist/async.min.js"></script>
+
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+
+    <body>
+
+        <script type="text/template" id="file-reader">
+            <div class="reader-wrapper">
+                <div class="reader-title"></div>
+                <div class="reader-body"></div>
+                <div data-position="fixed" class="reader-footer"></div>
+            </div>
+        </script>
+
+        <script type="text/template" id="template-files-outer">
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-theme="f"></fieldset>
+            </div>
+        </script>
+
+        <script type="text/template" id="template-files-inner">
+            <input type="checkbox" name="checkbox-{{inputName}}" id="checkbox-{{inputID}}" class="custom" />
+            <label for="checkbox-{{inputID}}">
+                <div class="file-name">{{fileName}}</div>
+                <div class="file-info">
+                    <span class="path">Path: {{fullPath}}</span><br>
+                    <span class="metadata">Metadata: {{metadata}}</span>
+                </div>
+            </label>
+        </script>
+
+        <div data-role="page" id="app-kinetics-server">
+            <div class="static-header">
+                <header>
+                    <h1 id="application-title">AppKinetics Server</h1>
+                </header>
+            </div>
+
+            <article data-role="content" class="content-app-kinetics-server">
+
+                <div id="content" style="display: none;">
+                    <h2 class="files-title" id="waits-header">Waiting for received files ...</h2>
+                    <div id='received-files' style="display: none;">
+                        <h2 id='received-result'></h2>
+                        <h3>Location:</h3>
+                        <div class="files-location">
+                            <p id='received-location'></p>
+                        </div>
+                        <div id="file-readers"></div>
+                        <h3 id="file-count"></h3>
+                    </div>
+                    <button id="confirm-btn" style="display: none;">Ok</button>
+                </div>
+
+            </article>
+
+        </div>
+    </body>
+
+</html>

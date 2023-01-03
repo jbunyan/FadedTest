@@ -1,0 +1,84 @@
+<!--
+    (c) 2019 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+    <title>RSS Reader</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js"></script>
+    <script src="js/main_script.js"></script>
+</head>
+
+<body>
+<div id="container-list-wrapper" class="page">
+    <div class="static-header">
+        <header>
+            <img class="material-icons" id="add-feed" src="img/round-add_circle_outline-24px.svg">
+            <h1 id="application-title">RSS</h1>
+            <img class="material-icons" id="edit-element" src="img/outline-settings-24px.svg">
+        </header>
+    </div>
+    <article class="content-list-wrapper">
+        <div id="list-container">
+            <div class="listview-wrapper">
+                <ul data-role="listview" data-inset="true" id="list-container-list" data-split-icon="delete" data-split-theme="d">
+
+                </ul>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div id="container-add" class="page d-none">
+    <div class="static-header">
+        <header>
+            <img class="material-icons" id="feeds-list" src="img/outline-arrow_back_ios-24px.svg">
+            <h1 id="add-feed-title">New</h1>
+            <img class="material-icons" id="add-rss-feed" src="img/outline-done-24px.svg">
+        </header>
+    </div>
+    <article class="content-add padding-content">
+        <div data-role="fieldcontain" class="form-field-wrapper">
+            <div data-role="fieldcontain">
+                <input type="text" id="add-rss-feed-name" class="form-field-wrapper" placeholder="Feed name" name="name" id="name" value=""  />
+            </div>
+            <div data-role="fieldcontain">
+                <input type="text" id="add-rss-feed-url"  class="form-field-wrapper" placeholder="Full URL to RSS feed" name="name" id="name" value=""  />
+            </div>
+        </div>
+    </article>
+</div>
+
+<div id="container-details" class="page d-none">
+    <div class="static-header">
+        <header>
+            <img class="material-icons" id="feeds-list" src="img/outline-arrow_back_ios-24px.svg">
+            <h1 id="feed-title" class="capitalize title">Feed name</h1>
+            <img class="material-icons" id="delete-element" src="img/outline-delete_outline-24px.svg">
+            <img class="material-icons" id="refresh-element" src="img/outline-refresh-24px.svg">
+        </header>
+    </div>
+    <article class="content-details padding-content">
+        <ul data-role="listview" data-inset="true" data-theme="d" data-icon="info" id="feeds">
+            <li><a href="#" data-icon="info">Loading feeds</a></li>
+        </ul>
+    </article>
+</div>
+</body>
+
+</html>

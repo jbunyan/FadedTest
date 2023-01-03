@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: GDServerSideServices</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: GDServerSideServices</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>GDServerSideServices<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">The GDServerSideServices provides ability to use GD Server Based Serveices.
+It returns all the needed information about service in JSON format.
+To use this feature you should bind the service you want to the sample application in Good Control (GC) console.
+Also you should bind the server where the service itself is hosted to the sample application in enterprise management console.
+For example, there is 'Google Timezone service' available on enterprise management console to be used in your application.
+This service is hosted on following server: maps.googleapis.com on port 443.
+You should configure your application to be subscribed on above service and to use above server. See enterprise management console guide on how to do this.
+Then when you call callGDServerSideService method with appropriate parameters you will receive all the information about this service.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="GDServerSideServices"><span class="type-signature"></span>new GDServerSideServices<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-serversideservices_assets_www_android_GDServerSideServices.js.html">cordova-plugin-bbd-serversideservices/assets/www/android/GDServerSideServices.js</a>, <a href="cordova-plugin-bbd-serversideservices_assets_www_android_GDServerSideServices.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="callGDServerSideService"><span class="type-signature"></span>callGDServerSideService<span class="signature">(serviceName, serviceVersion, successCallback, errorCallback)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to retrieve the information about server based service from Good Control (GC) console in JSON format.
+This method returns following information:
+serviceProviders - array of applications that provide appropriate service
+Each serviceProvider has information such as:
+identifier - identifier of the serviceProvider
+version - version of serviceProvider
+name - name of serviceProvider
+address - address of serviceProvider
+icon - icon associated with serviceProvider
+serverCluster - array of servers that are bind to the serviceProvider (application)
+services - array of services that are bind to the serviceProvider (appliaction)
+Each serverCluster has information about:
+server - host name of the server
+port - port server is running on
+priority - the priority of the server
+Each service has:
+identifier - identifier of the service
+version - version of the service
+type - service type
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>serviceName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the service, for example, "google.timezone.service"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>serviceVersion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Service version, for example, "1.0.0.0"</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>successCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke when callGDServerSideService method returns successfully.
+The object with information about service is passed to this function as parameter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke for error conditions.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-serversideservices_assets_www_android_GDServerSideServices.js.html">cordova-plugin-bbd-serversideservices/assets/www/android/GDServerSideServices.js</a>, <a href="cordova-plugin-bbd-serversideservices_assets_www_android_GDServerSideServices.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>window.plugins.GDServerSideServices.callGDServerSideService("google.timezone.service", "1.0.0.0",
+    function(info) {
+        alert("Information about service: " + info);
+    },
+    function(error) {
+        alert("Error occured: " + error);
+    }
+);</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GDAppKinetics.html">GDAppKinetics</a></li><li><a href="GDApplication.html">GDApplication</a></li><li><a href="GDCacheController.html">GDCacheController</a></li><li><a href="GDFormData.html">GDFormData</a></li><li><a href="GDHttpRequest.html">GDHttpRequest</a></li><li><a href="GDHttpResponse.html">GDHttpResponse</a></li><li><a href="GDInterAppCommunication.html">GDInterAppCommunication</a></li><li><a href="GDPushChannel.html">GDPushChannel</a></li><li><a href="GDPushChannelResponse.html">GDPushChannelResponse</a></li><li><a href="GDSecureStorage.html">GDSecureStorage</a></li><li><a href="GDServerSideServices.html">GDServerSideServices</a></li><li><a href="GDSocket.html">GDSocket</a></li><li><a href="GDSocketResponse.html">GDSocketResponse</a></li><li><a href="GDSpecificPolicies.html">GDSpecificPolicies</a></li><li><a href="GDTokenHelper.html">GDTokenHelper</a></li><li><a href="Launcher.html">Launcher</a></li><li><a href="WebSocket.html">WebSocket</a></li><li><a href="XMLHttpRequest.html">XMLHttpRequest</a></li></ul>
+<h3>Other</h3><ul><li><a href=LICENCES.html>LICENCES</a></li></ul></nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 19 2022 06:05:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

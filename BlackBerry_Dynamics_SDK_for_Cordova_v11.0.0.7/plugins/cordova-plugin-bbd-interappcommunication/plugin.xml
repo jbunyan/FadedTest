@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-interappcommunication"
+        version="1.1.0">
+
+  <name>InterAppCommunication Plugin (DEPRECATED)</name>
+
+  <description>The InterAppCommunication plugin is used to return information about a service provider application.</description>
+
+  <keywords>cordova,plugin,interappcommunication,gd</keywords>
+
+  <license>(c) 2021 BlackBerry Limited. All rights reserved.</license>
+
+  <info>
+    The InterAppCommunication plugin is dependent on the Base plugin, so please make sure the Base plugin is installed correctly.
+    The InterAppCommunication plugin is deprecated since version 10.1. It will be removed in future versions.
+  </info>
+
+  <dependency id="cordova-plugin-bbd-base" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-base" version="^4.0.0" />
+
+  <engines>
+    <engine name="cordova-android" version=">=9.0.0"/>
+    <engine name="cordova-ios" version=">=6.0.0"/>
+  </engines>
+
+  <!-- Android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="GDInterAppCommunication" >
+        <param name="android-package" value="com.good.gd.cordova.plugins.GDInterAppCommunicationPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/android/GDInterAppCommunication.js" name="GDInterAppCommunicationPlugin">
+      <clobbers target="window.plugins.GDInterAppCommunication" />
+    </js-module>
+
+    <lib-file src="src/android/libs/bbd-interappcommunication.jar" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="GDInterAppCommunication">
+        <param name="ios-package" value="GDInterAppCommunicationPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/ios/GDInterAppCommunication.js" name="GDInterAppCommunicationPlugin">
+      <clobbers target="window.plugins.GDInterAppCommunication" />
+    </js-module>
+
+    <framework src="src/ios/frameworks/BbdInterAppCommunicationPlugin.framework" custom="true" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+  </platform>
+
+</plugin>

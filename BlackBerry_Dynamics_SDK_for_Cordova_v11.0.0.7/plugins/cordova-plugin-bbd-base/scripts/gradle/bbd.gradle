@@ -1,0 +1,30 @@
+/*
+ (c) 2022 BlackBerry Limited. All rights reserved.
+*/
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://software.download.blackberry.com/repository/maven' }
+
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.blackberry.blackberrydynamics:android_handheld_platform:11.0.1.140'
+    implementation 'com.blackberry.blackberrydynamics:android_handheld_backup_support:11.0.1.140'
+    implementation 'com.blackberry.blackberrydynamics:android_webview:11.0.1.140'
+
+    implementation(name: 'bbd-base', ext: 'aar')
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0-beta01'
+
+    // WebKit from androidX
+    implementation 'androidx.webkit:webkit:1.4.0'
+}

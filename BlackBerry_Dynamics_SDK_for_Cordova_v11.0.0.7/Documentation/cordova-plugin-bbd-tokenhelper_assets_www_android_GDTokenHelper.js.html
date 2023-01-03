@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: cordova-plugin-bbd-tokenhelper/assets/www/android/GDTokenHelper.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: cordova-plugin-bbd-tokenhelper/assets/www/android/GDTokenHelper.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+ * (c) 2021 BlackBerry Limited. All rights reserved.
+ */
+
+;
+(function() {
+    var cordovaExec = require('cordova/exec');
+
+    /**
+     * @class GDTokenHelper
+     *
+     * @classdesc The GDTokenHelper is used to request token from server side and process
+     * callback on response
+     */
+    var GDTokenHelper = function() {
+        Object.defineProperty(this, 'toString', {
+            value: function() {
+                return '[object GDTokenHelper]';
+            }
+        })
+    };
+
+    Object.defineProperty(GDTokenHelper, 'toString', {
+        value: function() {
+            return 'function GDTokenHelper() { [native code] }';
+        }
+    });
+
+    Object.preventExtensions(GDTokenHelper);
+
+    // ***** BEGIN: MODULE METHOD DEFINITIONS - GDTokenHelper *****
+
+    /**
+     * @function GDTokenHelper#getGDAuthToken
+     *
+     * @description Call this method to request a new BlackBerry Dynamics Auth token
+     *
+     * @param {string} challenge string for the authorization
+     *
+     * @param {string} serverName string for the server name
+     *
+     * @param {function} onSuccess Callback function to invoke when the function returns successfully.
+     *
+     * @param {function} onError Callback function to invoke for error conditions.
+     *
+     * @example
+     * window.plugins.GDTokenHelper.getGDAuthToken("test", "serverName",
+     *     function(result) {
+     *         alert("Retrieved Application details " + result);
+     *     },
+     *     function(result) {
+     *         alert("Api not supported on emulated devices: " + result);
+     *     }
+     * );
+     */
+    GDTokenHelper.prototype.getGDAuthToken = function(challenge, serverName, onSuccess, onError) {
+
+        if (challenge === undefined) {
+            throw new Error("ERROR in GDTokenHelper.getGDAuthToken: challenge parameter is not set.");
+        }
+
+        if (serverName === undefined) {
+            throw new Error("ERROR in GDTokenHelper.getGDAuthToken: serverName parameter is not set.");
+        }
+
+        if (typeof onSuccess !== 'function') {
+            throw new Error("ERROR in GDTokenHelper.getGDAuthToken: onSuccess parameter is not a function.");
+        }
+
+        var parms = [challenge, serverName];
+        cordovaExec(onSuccess, onError, "GDTokenHelper", "getGDAuthToken", parms);
+    };
+
+    Object.defineProperty(GDTokenHelper.prototype.getGDAuthToken, 'toString', {
+        value: function() {
+            return 'function getGDAuthToken() { [native code] }';
+        }
+    });
+
+    Object.preventExtensions(GDTokenHelper.prototype);
+
+    // ***** END: MODULE METHOD DEFINITIONS - GDTokenHelper *****
+
+    var gdTokenHelper = new GDTokenHelper();
+    Object.preventExtensions(gdTokenHelper);
+
+    // Install the plugin.
+    module.exports = gdTokenHelper;
+}()); // End the Module Definition.
+//************************************************************************************************
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GDAppKinetics.html">GDAppKinetics</a></li><li><a href="GDApplication.html">GDApplication</a></li><li><a href="GDCacheController.html">GDCacheController</a></li><li><a href="GDFormData.html">GDFormData</a></li><li><a href="GDHttpRequest.html">GDHttpRequest</a></li><li><a href="GDHttpResponse.html">GDHttpResponse</a></li><li><a href="GDInterAppCommunication.html">GDInterAppCommunication</a></li><li><a href="GDPushChannel.html">GDPushChannel</a></li><li><a href="GDPushChannelResponse.html">GDPushChannelResponse</a></li><li><a href="GDSecureStorage.html">GDSecureStorage</a></li><li><a href="GDServerSideServices.html">GDServerSideServices</a></li><li><a href="GDSocket.html">GDSocket</a></li><li><a href="GDSocketResponse.html">GDSocketResponse</a></li><li><a href="GDSpecificPolicies.html">GDSpecificPolicies</a></li><li><a href="GDTokenHelper.html">GDTokenHelper</a></li><li><a href="Launcher.html">Launcher</a></li><li><a href="WebSocket.html">WebSocket</a></li><li><a href="XMLHttpRequest.html">XMLHttpRequest</a></li></ul>
+<h3>Other</h3><ul><li><a href=LICENCES.html>LICENCES</a></li></ul></nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 19 2022 06:05:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

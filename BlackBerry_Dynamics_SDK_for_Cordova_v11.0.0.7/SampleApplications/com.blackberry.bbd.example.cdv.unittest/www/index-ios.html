@@ -1,0 +1,116 @@
+<!--
+    (c) 2021 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+        <title>GDCordova unit tests</title>
+
+        <!-- include css styles -->
+
+        <link rel="stylesheet" type="text/css" href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <!-- jasmine-3.3.0 - NPM + Hook-->
+        <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+        <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+        <script type="text/javascript" src="spec/boot-custom.js"></script>
+        <script type="text/javascript" src="spec/helper.js"></script>
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- include Framework libs-->
+        <script src="node_modules/async/dist/async.min.js"></script>
+        <script type="text/javascript" src="js/Uint8Array.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- Environment Variables -->
+        <script type="text/javascript" src="js/env.js"></script>
+
+        <!-- Helper Scripts - NTLM, Digest Auth -->
+        <script type="text/javascript" src="js/scripts/digestHelper.js"></script>
+        <script type="text/javascript" src="js/scripts/ntlmHelper.js"></script>
+
+        <!-- include test suites-->
+        <script type="text/javascript" src="js/tests/testGDApplication.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_localStorage.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_localFileSystem.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_fileSystemEntry.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_io.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_logs.js"></script>
+        <script type="text/javascript" src="js/tests/testGDInterAppCommunication_deprecation.js"></script>
+        <script type="text/javascript" src="js/tests/testGDSocket.js"></script>
+        <script type="text/javascript" src="js/tests/testGDSQLite.js"></script>
+        <script type="text/javascript" src="js/tests/testGDSQLite_new.js"></script>
+        <script type="text/javascript" src="js/tests/testGDStorage_sql3encimport.js"></script>
+        <script type="text/javascript" src="js/tests/testGDFileTransfer.js"></script>
+        <script type="text/javascript" src="js/tests/testGDTokenHelper.js"></script>
+        <script type="text/javascript" src="js/tests/testGDPush.js"></script>
+        <script type="text/javascript" src="js/tests/testGDHttpRequest.js"></script>
+        <!--script type="text/javascript" src="js/tests/testGDHttpRequest_Internal.js"></script -->
+        <script type="text/javascript" src="js/tests/testWebSockets.js"></script>
+        <script type="text/javascript" src="js/tests/testGDSpecificPolicies.js"></script>
+        <script type="text/javascript" src="js/tests/testGDServerSideServices.js"></script>
+        <script type="text/javascript" src="js/tests/testBBDLauncher.js"></script>
+        <script type="text/javascript" src="js/tests/testGDAppKinetics_SendMail.js"></script>
+        <script type="text/javascript" src="js/tests/testGDFile_Cordova.js"></script>
+        <script type="text/javascript" src="js/tests/testGDFileTransfer_Cordova.js"></script>
+        <script type="text/javascript" src="js/tests/testBBDMediaCapture.js"></script>
+
+
+        <!-- ---------- SQLite Storage test suite (Note: Jasmine 2.5.2 is required) ---------- -->
+        <!-- Steps to run specs: -->
+        <!--
+        - Download Jasmine 2.5.2 standalone distribution (jasmine-standalone-2.5.2.zip) from official resources
+        - Copy Jasmine 2.5.2 sources
+            from "<path_to_jasmine-standalone-2.5.2>/lib/jasmine-2.5.2/"
+            to "<path_to_com.blackberry.bbd.example.cdv.unittest>/www/spec/lib/jasmine-2.5.2/"
+        - Replace Jasmine 3.3.0 linking with following linking for Jasmine 2.5.2
+        - Uncomment following test suite for "cordova-plugin-bbd-sqlite-storage"
+        -->
+
+        <!-- ---------- Jasmine 2.5.2  ----------  -->
+        <!-- <link rel="shortcut icon" type="image/png" href="spec/lib/jasmine-2.5.2/jasmine_favicon.png">
+        <script src="spec/lib/jasmine-2.5.2/jasmine.js"></script>
+        <script src="spec/lib/jasmine-2.5.2/jasmine-html.js"></script>
+        <script src="spec/lib/jasmine-2.5.2/boot.js"></script> -->
+
+        <!-- ---------- Include "cordova-plugin-bbd-sqlite-storage" test suites ---------- -->
+        <!-- <script src="js/tests/testSQLite_Cordova/browser-check-startup.js"></script>
+        <script src="js/tests/testSQLite_Cordova/self-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/sqlite-version-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-string-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-sql-select-value-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/basic-db-tx-sql-storage-results.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-sql-operations-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/sql-batch-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-sql-features-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/regexp-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-simultaneous-tx-access-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-multiple-update-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/tx-semantics-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-error-handling-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-value-bindings-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-tx-error-mapping-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/db-open-close-delete-test.js"></script>
+        <script src="js/tests/testSQLite_Cordova/ext-tx-blob-test.js"></script> -->
+
+        <!-- include main js files -->
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </head>
+
+    <body>
+        <div id="stage" style="display:none;"></div>
+        <div id="test_results"></div>
+    </body>
+</html>

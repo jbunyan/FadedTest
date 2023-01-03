@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-xmlhttprequest"
+        version="2.1.0">
+
+  <name>XmlHttpRequest Plugin</name>
+
+  <description>The XMLHttpRequest plugin is a JavaScript object that provides an easy way to retrieve data from a URL in a secure way without having to do a full page refresh.</description>
+
+  <keywords>cordova,plugin,xmlhttprequest,http,gd</keywords>
+
+  <license>(c) 2022 BlackBerry Limited. All rights reserved.</license>
+
+  <info>
+    The XMLHttpRequest plugin is dependent on Base, Storage and HttpRequest plugins, so please make sure these plugins are installed correctly.
+  </info>
+
+  <dependency id="cordova-plugin-bbd-base" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-base" version="^4.0.0" />
+  <dependency id="cordova-plugin-bbd-httprequest" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-httprequest" version="^1.2.0" />
+  <dependency
+    id="cordova-plugin-bbd-file"
+    url="git+https://github.com/blackberry/blackberry-dynamics-cordova-plugins#file"
+    version="^1.3.0" />
+
+  <engines>
+    <engine name="cordova-android" version=">=9.0.0"/>
+    <engine name="cordova-ios" version=">=6.0.0"/>
+  </engines>
+
+  <!-- Android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="GDXMLHttpRequest" >
+        <param name="android-package" value="com.good.gd.cordova.plugins.GDXmlHttpRequestPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/android/GDXmlHttpRequest.js" name="XmlHttpRequest">
+      <clobbers target="window.XmlHttpRequest" />
+    </js-module>
+
+    <js-module src="assets/www/android/GDFormData.js" name="FormData">
+      <clobbers target="window.FormData" />
+    </js-module>
+
+    <lib-file src="src/android/libs/bbd-xmlhttprequest.jar" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+
+    <js-module src="assets/www/ios/GDXmlHttpRequest.js" name="XmlHttpRequest">
+        <clobbers target="window.XmlHttpRequest" />
+    </js-module>
+
+  </platform>
+
+</plugin>

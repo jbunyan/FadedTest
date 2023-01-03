@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bbd-launcher"
+        version="1.0.0">
+
+  <name>Launcher Plugin</name>
+
+  <description>The Launcher plugin is used to set up the launcher in an application.</description>
+
+  <keywords>cordova,plugin,launcher,gd,dynamics,bbd</keywords>
+
+  <license>(c) 2021 BlackBerry Limited. All rights reserved.</license>
+
+  <info>
+    The Launcher plugin is dependent on the Base plugin, so please make sure the Base plugin is installed correctly.
+  </info>
+
+  <dependency id="cordova-plugin-bbd-base" url="/Users/iss/Development/FadedTest/BlackBerry_Dynamics_SDK_for_Cordova_v11.0.0.7/plugins/cordova-plugin-bbd-base" version="^4.0.0" />
+
+  <engines>
+    <engine name="cordova-android" version=">=9.0.0"/>
+    <engine name="cordova-ios" version=">=6.0.0"/>
+  </engines>
+  
+  <!-- Android -->
+  <platform name="android">
+    <framework src="src/android/gradle/launcher.gradle" custom="true" type="gradleReference" />
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BBDLauncher">
+        <param name="android-package" value="com.good.gd.cordova.plugins.BBDLauncherPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/android/BBDLauncher.js" name="Launcher">
+      <clobbers target="window.launcher" />
+    </js-module>
+
+    <lib-file src="src/android/libs/bbd-launcher.jar" />
+    <lib-file src="src/android/libs/launcherlib.aar" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+  </platform>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="BBDLauncher">
+        <param name="ios-package" value="BBDLauncherPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <js-module src="assets/www/ios/BBDLauncher.js" name="Launcher">
+      <clobbers target="window.launcher" />
+    </js-module>
+
+    <config-file target="*-Info.plist" parent="GDFetchResources">
+      <string>YES</string>
+    </config-file>
+
+    <framework src="src/ios/frameworks/BbdLauncherPlugin.framework" custom="true" />
+
+    <hook type="after_plugin_install" src="scripts/hooks/afterPluginInstall.js" />
+    <hook type="before_compile" src="scripts/hooks/addLauncherFramework.js" />
+    <hook type="before_plugin_rm" src="scripts/hooks/rmLauncherFramework.js" />
+  </platform>
+
+</plugin>

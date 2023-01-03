@@ -1,0 +1,6 @@
+/*
+ * (c) 2020 BlackBerry Limited. All rights reserved.
+ */
+
+"NSFaceIDUsageDescription" = "Permet de s'authentifier sans mot de passe.";
+"NSCameraUsageDescription" = "Autoriser l'utilisation de la caméra pour scanner un QR code";

@@ -1,0 +1,6 @@
+{
+    "ApplicationID": "com.blackberry.bbd.example.cdv.unittest",
+    "applicationName": "UnitTest",
+    "version": "1.0.0",
+    "description": "Demonstrates how to use all APIs supported in this version of the Cordova Plugin release."
+}

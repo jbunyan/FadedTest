@@ -1,0 +1,51 @@
+<!--
+    (c) 2019 BlackBerry Limited. All rights reserved.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta http-equiv="Content-Security-Policy" charset="UTF-8">
+
+        <title>OnProgress</title>
+
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet"  href="css/style.css">
+
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="node_modules/underscore/underscore-min.js"></script>
+        <script src="node_modules/backbone/backbone-min.js"></script>
+
+        <script src="js/index.js"></script>
+        <script src="js/onprogress.js"></script>
+    </head>
+
+    <body>
+        <div id="main-page" class="page">
+            <div class="static-header">
+                <header>
+                    <h1 id="application-title">OnProgress</h1>
+                </header>
+            </div>
+
+            <article class="main-content">
+                <img class="material-icons" id="publish" src="img/round-publish-24px.svg">
+                <h5>File "<span class="file-name"></span>" with size of <span class="file-size"></span> can be uploaded.</h5>
+                <h4 style="display: none;">Progress:</h4>
+                <div>
+                    <h1 style="display: none;" id="bar">0%</h1>
+                </div>
+
+                <button id="upload-btn">Upload</button>
+            </article>
+        </div>
+
+    </body>
+
+</html>

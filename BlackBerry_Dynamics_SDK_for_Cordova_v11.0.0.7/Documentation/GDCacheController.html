@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: GDCacheController</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: GDCacheController</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>GDCacheController<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Use this class to control the secure authentication caches of the
+GDURLLoadingSystem and GDHttpRequest classes. (Currently, there are only two controls.)
+The secure authentication cache is used by these classes as follows:<br/>
+<br/>
+<b>GD URL Loading System</b>
+<ul>
+    <li>Stores credentials for all authentication methods.</li>
+    <li>Stores tickets for Kerberos authentication.</li>
+</ul>
+<b>GD HTTP Request</b>
+<ul>
+    <li>Stores tickets for Kerberos authentication.</li>
+</ul></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="GDCacheController"><span class="type-signature"></span>new GDCacheController<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDCacheController.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clearCredentialsForMethod"><span class="type-signature"></span>clearCredentialsForMethod<span class="signature">(method, success, fail)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to clear the cached credentials for a
+particular authentication method, or to clear for all methods. Calling this
+function clears the session cache, and the permanent cache if present.
+(Currently, the BlackBerry Dynamics client library only has a permanent cache for
+Kerberos authentication tickets.)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>method</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">One of the following constants, specifying which cache
+or caches are to be cleared:
+<ul>
+ <li>"HTTPBasic" clears Basic Authentication credentials</li>
+ <li>"Default" also clears Basic Authentication credentials</li>
+ <li>"HTTPDigest" clears Digest Authentication credentials</li>
+ <li>"NTLM" clears Kerberos Authentication credentials and tickets</li>
+ <li>"Negotiate" clears Kerberos Authentication credentials and tickets</li>
+ <li>"All" clears all of the above</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke upon successful completion of the request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke if the request cannot be completed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDCacheController.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>function gdccOnSuccess(response) {
+ console.log("The function call succeeded.");
+};
+
+function gdccOnError(response) {
+  console.log("The function call failed: " + response);
+};
+
+function clearCredential(){
+ var method = "HTTPDigest";
+ try {
+     window.plugins.GDCacheController.clearCredentialsForMethod(method, gdccOnSuccess, gdccOnError);
+ } catch(e) {
+     throw new Error("A try catch error was caught on GDCacheController.clearCredentialsForMethod");
+ };
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="kerberosAllowDelegation"><span class="type-signature"></span>kerberosAllowDelegation<span class="signature">(allow, success, fail)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Call this function to allow or disallow Kerberos delegation within BlackBerry Dynamics
+secure communications. By default, Kerberos delegation is not allowed.  When Kerberos delegation
+is allowed, the BlackBerry Dynamics run-time behaves as follows:
+
+<ul>
+ <li>Kerberos requests will be for tickets that can be delegated.</li>
+ <li>Application servers that are trusted for delegation can be sent tickets that can be
+     delegated, if such tickets were issued.</li>
+</ul>
+
+When Kerberos delegation is not allowed, the BlackBerry Dynamics run-time behaves as follows:
+
+<ul>
+ <li>Kerberos requests will not be for tickets that can be delegated.</li>
+ <li>No application server will be sent tickets that can be delegated, even if such tickets were issued.</li>
+</ul>
+
+After this function has been called, delegation will remain allowed or disallowed until this function is
+called again with a different setting.  When this function is called, the Kerberos ticket and credentials
+caches will be cleared. I.e. there is an effective call to the clearCredentialsForMethod: function with an
+NSURLAuthenticationMethodNegotiate parameter.  Note: User and service configuration in the Kerberos Domain
+Controller (typically a Microsoft Active Directory server) is required in order for delegation to be
+successful. On its own, calling this function will not make Kerberos delegation work in the whole end-to-end
+application.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>allow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">true to allow delegation, false to disallow.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>success</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke upon successful completion of the request.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback function to invoke if the request cannot be completed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html">cordova-plugin-bbd-httprequest/assets/www/android/GDCacheController.js</a>, <a href="cordova-plugin-bbd-httprequest_assets_www_android_GDCacheController.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>function gdccOnSuccess(response) {
+ console.log("The function call succeeded.");
+};
+
+function gdccOnError(response) {
+ console.log("The function call failed: " + response);
+};
+
+function clearCredential(){
+ try {
+     window.plugins.GDCacheController.kerberosAllowDelegation(true, gdccOnSuccess, gdccOnError);
+ } catch(e) {
+      throw new Error("A try catch error was caught on GDCacheController.kerberosAllowDelegation");
+ };
+}</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GDAppKinetics.html">GDAppKinetics</a></li><li><a href="GDApplication.html">GDApplication</a></li><li><a href="GDCacheController.html">GDCacheController</a></li><li><a href="GDFormData.html">GDFormData</a></li><li><a href="GDHttpRequest.html">GDHttpRequest</a></li><li><a href="GDHttpResponse.html">GDHttpResponse</a></li><li><a href="GDInterAppCommunication.html">GDInterAppCommunication</a></li><li><a href="GDPushChannel.html">GDPushChannel</a></li><li><a href="GDPushChannelResponse.html">GDPushChannelResponse</a></li><li><a href="GDSecureStorage.html">GDSecureStorage</a></li><li><a href="GDServerSideServices.html">GDServerSideServices</a></li><li><a href="GDSocket.html">GDSocket</a></li><li><a href="GDSocketResponse.html">GDSocketResponse</a></li><li><a href="GDSpecificPolicies.html">GDSpecificPolicies</a></li><li><a href="GDTokenHelper.html">GDTokenHelper</a></li><li><a href="Launcher.html">Launcher</a></li><li><a href="WebSocket.html">WebSocket</a></li><li><a href="XMLHttpRequest.html">XMLHttpRequest</a></li></ul>
+<h3>Other</h3><ul><li><a href=LICENCES.html>LICENCES</a></li></ul></nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 19 2022 06:05:35 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
