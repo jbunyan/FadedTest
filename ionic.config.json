@@ -1,0 +1,7 @@
+{
+  "name": "FadedTest",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
